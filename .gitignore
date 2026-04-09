@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.tsbuildinfo
+*.egg-info/
+.wrangler/
+vite.config.js
+vite.config.d.ts
+.env

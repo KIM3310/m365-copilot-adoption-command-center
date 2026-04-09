@@ -1,0 +1,166 @@
+# Microsoft 365 Copilot Adoption Command Center
+
+Portfolio-safe project tailored for the **AI Adoption Architect / Consultant** role at Microsoft.
+
+This repository is not a fake customer story. It is a synthetic enterprise rollout simulation designed to show how I would:
+
+- assess Microsoft 365 Copilot readiness,
+- prioritize persona-based use cases,
+- build training and champions motions,
+- design adoption and value KPIs,
+- facilitate executive decisions with a visible decision log,
+- convert fear, quality, and safety objections into owner-led experiments.
+
+## What this project demonstrates
+
+### 1. Change and readiness leadership
+- ADKAR-aligned readiness assessment
+- wave entry criteria and action plans
+- manager cascade and multilingual communications
+
+### 2. Use case and business case design
+- finance, legal, customer service, and executive staff scenarios
+- rollout sequencing by persona and region
+- value framing beyond license activation
+
+### 3. Adoption analytics and value realization
+- Power BI-style KPI framing
+- weekly active use, repeat use, quality approval, support reopen rate
+- sponsor-ready value readout narrative
+
+### 4. Facilitation discipline
+- visible timers
+- parking lot management
+- decision log hygiene
+- objection-to-experiment conversion with owners and dates
+
+## Main product surfaces
+
+- **React command center** for interview walkthroughs
+- **FastAPI backend** with deterministic planning and packet checks
+- **Guide library** for readiness, champions, governance, value measurement, and facilitation
+- **Interview pack** with talk track and English Q&A prep
+
+## Quick start
+
+### Backend
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev]"
+uvicorn backend.app.main:app --reload
+```
+
+Backend runs on `http://127.0.0.1:8000`.
+
+### Frontend
+
+```bash
+npm install
+npm run dev
+```
+
+Frontend runs on `http://127.0.0.1:5173`.
+
+### Verify
+
+```bash
+pytest
+npm run build
+npm run test
+npm run cf:check
+```
+
+## Cloudflare Deployment
+
+This repo now includes a Cloudflare Worker deployment path that serves the built React app as static assets and exposes the interview APIs from the Worker runtime.
+
+### Prepare and dry-run
+
+```bash
+npm run cf:check
+```
+
+### Deploy
+
+```bash
+npm run cf:deploy
+```
+
+Files involved:
+
+- [`wrangler.jsonc`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/wrangler.jsonc)
+- [`cloudflare/worker.ts`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/cloudflare/worker.ts)
+- [`scripts/export_cloudflare_data.py`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/scripts/export_cloudflare_data.py)
+
+## API summary
+
+- `GET /api/overview`
+- `GET /api/healthz`
+- `GET /api/use-cases`
+- `GET /api/guides`
+- `GET /api/guides/{guide_id}`
+- `GET /api/program-signals`
+- `GET /api/readiness`
+- `GET /api/business-case`
+- `GET /api/support-model`
+- `GET /api/facilitation`
+- `GET /api/search?q=champion`
+- `GET /api/interview/brief`
+- `POST /api/assistant/plan`
+- `POST /api/rollout-packet/preview`
+
+## Suggested interview walkthrough
+
+1. Start on the dashboard and explain the synthetic enterprise scenario.
+2. Open the role-fit board and map each section to the Microsoft job description.
+3. Show one persona-based Copilot use case and its guardrails.
+4. Run the planner with a sponsor scenario and explain why the recommendation is structured around readiness, training, support, and value.
+5. Show the facilitation board and explain how you keep workshops outcome-focused.
+6. Run the rollout packet preview to show how you gate executive communications.
+
+## Documentation map
+
+- [`docs/copilot_readiness_assessment.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/copilot_readiness_assessment.md)
+- [`docs/copilot_business_case_playbook.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/copilot_business_case_playbook.md)
+- [`docs/champion_launch_kit.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/champion_launch_kit.md)
+- [`docs/prompt_review_standard.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/prompt_review_standard.md)
+- [`docs/multi_geo_change_comms.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/multi_geo_change_comms.md)
+- [`docs/value_realization_kpi_dictionary.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/value_realization_kpi_dictionary.md)
+- [`docs/feedback_support_operating_model.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/feedback_support_operating_model.md)
+- [`docs/facilitation_toolkit.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/facilitation_toolkit.md)
+- [`docs/role_fit.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/role_fit.md)
+- [`docs/jd_alignment_matrix.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/jd_alignment_matrix.md)
+- [`docs/demo_script_english.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/demo_script_english.md)
+- [`docs/star_story_bank.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/star_story_bank.md)
+- [`docs/thirty_sixty_ninety_plan.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/thirty_sixty_ninety_plan.md)
+- [`docs/interview_storyline.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/interview_storyline.md)
+- [`docs/english_technical_qna.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/english_technical_qna.md)
+
+## Structure
+
+```text
+backend/app/           FastAPI API, planner logic, and synthetic program data
+src/                   React interview dashboard
+docs/                  Readiness, champions, KPI, facilitation, and interview materials
+tests/                 Backend API tests
+src/test/              Frontend tests
+```
+
+## Truthfulness boundary
+
+This project is intentionally portfolio-safe.
+
+- No real customer data
+- No claim of real Microsoft customer delivery
+- No live Copilot tenant dependency
+- No fake production telemetry
+
+What is real:
+
+- the operating model,
+- the change management structure,
+- the KPI logic,
+- the facilitation mechanics,
+- the quality of the interview story.
