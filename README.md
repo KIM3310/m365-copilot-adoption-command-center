@@ -133,7 +133,7 @@ Notes:
 GitHub Actions is configured for both validation and deployment:
 
 - `CI`: runs backend tests, frontend tests, regenerates the Cloudflare data bundle, verifies generated code is committed, and builds the production frontend.
-- `Deploy Worker`: reruns validation on `main`, performs a dry-run deploy, deploys to Cloudflare, and smoke-tests `/api/healthz`.
+- `Deploy Worker`: manual deployment workflow that reruns validation, performs a dry-run deploy, deploys to Cloudflare, and smoke-tests `/api/healthz`.
 
 Workflow files:
 
@@ -156,6 +156,7 @@ Why this matters:
 - GitHub Actions should use a dedicated deploy token rather than a local OAuth session-derived token.
 - A scoped token reduces blast radius and makes future rotations simpler.
 - This keeps the deployment story aligned with Cloudflare's current GitHub Actions guidance.
+- Until that token is rotated, keep deployment manual through `workflow_dispatch` so the repository does not show repeated false-red deploy failures on every push.
 
 Hardening runbook:
 
