@@ -115,6 +115,27 @@ Workflow files:
 - [`.github/workflows/ci.yml`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/.github/workflows/ci.yml)
 - [`.github/workflows/deploy.yml`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/.github/workflows/deploy.yml)
 
+## Security Hardening
+
+The deploy workflow is production-ready, but the final best-practice hardening step is to rotate the Cloudflare secret in GitHub to a manually created least-privilege API token.
+
+Recommended final state:
+
+- Create a Cloudflare API token from the Cloudflare dashboard using the **Edit Cloudflare Workers** template.
+- Restrict the token to only the target Cloudflare account used by this Worker deployment.
+- Store it in the GitHub repository secret named `CLOUDFLARE_API_TOKEN`.
+- Keep `CLOUDFLARE_ACCOUNT_ID` set to `5ae9190b0d325f6c39a228bf50d188d8`.
+
+Why this matters:
+
+- GitHub Actions should use a dedicated deploy token rather than a local OAuth session-derived token.
+- A scoped token reduces blast radius and makes future rotations simpler.
+- This keeps the deployment story aligned with Cloudflare's current GitHub Actions guidance.
+
+Hardening runbook:
+
+- [`docs/production_hardening.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/production_hardening.md)
+
 ## API summary
 
 - `GET /api/overview`
