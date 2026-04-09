@@ -1,8 +1,20 @@
 import { guideDetails, overview } from './generated/static-data';
 
 interface Env {
-  ASSETS: Fetcher;
+  ASSETS: {
+    fetch(request: Request): Promise<Response> | Response;
+  };
 }
+
+type Audience = 'all' | 'executive' | 'it' | 'finance' | 'legal' | 'customer-service' | 'champion';
+
+type ValidationIssue = {
+  type: string;
+  loc: string[];
+  msg: string;
+  input: unknown;
+  ctx?: Record<string, unknown>;
+};
 
 const STOPWORDS = new Set([
   'the',
@@ -28,11 +40,133 @@ const STOPWORDS = new Set([
   'they',
 ]);
 
+const AUDIENCES: Audience[] = ['all', 'executive', 'it', 'finance', 'legal', 'customer-service', 'champion'];
+
 function jsonResponse(data: unknown, status = 200): Response {
   return new Response(JSON.stringify(data), {
     status,
     headers: { 'content-type': 'application/json; charset=utf-8' },
   });
+}
+
+function validationResponse(issues: ValidationIssue[], status = 422): Response {
+  return jsonResponse({ detail: issues }, status);
+}
+
+function expectedAudienceText(): string {
+  return AUDIENCES.map((value) => `'${value}'`).join(', ');
+}
+
+function asRecord(value: unknown): Record<string, unknown> | null {
+  return value !== null && typeof value === 'object' && !Array.isArray(value) ? (value as Record<string, unknown>) : null;
+}
+
+async function parseJsonBody(request: Request): Promise<{ payload?: Record<string, unknown>; error?: Response }> {
+  try {
+    const raw = (await request.json()) as unknown;
+    const payload = asRecord(raw);
+    if (!payload) {
+      return {
+        error: validationResponse([
+          {
+            type: 'model_attributes_type',
+            loc: ['body'],
+            msg: 'Input should be a valid dictionary or object to extract fields from',
+            input: raw,
+          },
+        ]),
+      };
+    }
+    return { payload };
+  } catch {
+    return {
+      error: validationResponse([
+        {
+          type: 'json_invalid',
+          loc: ['body', 'json'],
+          msg: 'JSON decode error',
+          input: null,
+        },
+      ]),
+    };
+  }
+}
+
+function validateRequiredString(
+  payload: Record<string, unknown>,
+  field: string,
+  minLength: number,
+  locPrefix: 'body' | 'query',
+): ValidationIssue[] {
+  const value = payload[field];
+  const loc = [locPrefix, field];
+  if (value === undefined) {
+    return [{ type: 'missing', loc, msg: 'Field required', input: payload }];
+  }
+  if (typeof value !== 'string') {
+    return [{ type: 'string_type', loc, msg: 'Input should be a valid string', input: value }];
+  }
+  if (value.length < minLength) {
+    return [
+      {
+        type: 'string_too_short',
+        loc,
+        msg: `String should have at least ${minLength} characters`,
+        input: value,
+        ctx: { min_length: minLength },
+      },
+    ];
+  }
+  return [];
+}
+
+function validateOptionalAudience(
+  payload: Record<string, unknown>,
+  field: string,
+  defaultValue: Audience,
+): { value: Audience; issues: ValidationIssue[] } {
+  const value = payload[field];
+  if (value === undefined) {
+    return { value: defaultValue, issues: [] };
+  }
+  if (typeof value !== 'string' || !AUDIENCES.includes(value as Audience)) {
+    return {
+      value: defaultValue,
+      issues: [
+        {
+          type: 'literal_error',
+          loc: ['body', field],
+          msg: `Input should be ${expectedAudienceText()}`,
+          input: value,
+          ctx: { expected: expectedAudienceText() },
+        },
+      ],
+    };
+  }
+  return { value: value as Audience, issues: [] };
+}
+
+function validateRequiredAudience(payload: Record<string, unknown>, field: string): { value?: Audience; issues: ValidationIssue[] } {
+  const value = payload[field];
+  if (value === undefined) {
+    return {
+      issues: [{ type: 'missing', loc: ['body', field], msg: 'Field required', input: payload }],
+    };
+  }
+  if (typeof value !== 'string' || !AUDIENCES.includes(value as Audience)) {
+    return {
+      issues: [
+        {
+          type: 'literal_error',
+          loc: ['body', field],
+          msg: `Input should be ${expectedAudienceText()}`,
+          input: value,
+          ctx: { expected: expectedAudienceText() },
+        },
+      ],
+    };
+  }
+  return { value: value as Audience, issues: [] };
 }
 
 function matchesQuery(texts: string[], query: string | null): boolean {
@@ -107,7 +241,7 @@ function retrieveCitations(requestText: string) {
 }
 
 function prioritizedUseCases(primary: (typeof overview.use_cases)[number]): string[] {
-  const related = [primary.name];
+  const related: string[] = [primary.name];
   if (primary.id.includes('finance')) {
     related.push('Executive Briefing and Decision Recap Sprint', 'Legal Matter Prep Copilot Sprint');
   } else if (primary.id.includes('legal')) {
@@ -261,7 +395,7 @@ function buildPlan(payload: { request: string; audience: string }) {
   };
 }
 
-function previewRolloutPacket(payload: { title: string; audience: string; body: string }) {
+function previewRolloutPacket(payload: { title: string; audience: Audience; body: string }) {
   const lowered = payload.body.toLowerCase();
   const warnings: string[] = [];
   const requiredSignals: Record<string, string> = {
@@ -403,8 +537,19 @@ async function handleApi(request: Request, url: URL): Promise<Response | null> {
   }
   if (pathname === '/api/search' && method === 'GET') {
     const q = url.searchParams.get('q');
-    if (!q || q.length < 2) {
-      return jsonResponse({ detail: 'query too short' }, 400);
+    if (q === null) {
+      return validationResponse([{ type: 'missing', loc: ['query', 'q'], msg: 'Field required', input: null }]);
+    }
+    if (q.length < 2) {
+      return validationResponse([
+        {
+          type: 'string_too_short',
+          loc: ['query', 'q'],
+          msg: 'String should have at least 2 characters',
+          input: q,
+          ctx: { min_length: 2 },
+        },
+      ]);
     }
     const items = [
       ...overview.use_cases
@@ -423,12 +568,47 @@ async function handleApi(request: Request, url: URL): Promise<Response | null> {
     return jsonResponse({ query: q, total: items.length, items });
   }
   if (pathname === '/api/assistant/plan' && method === 'POST') {
-    const body = (await request.json()) as { request: string; audience: string };
-    return jsonResponse(buildPlan(body));
+    const parsed = await parseJsonBody(request);
+    if (parsed.error) {
+      return parsed.error;
+    }
+    const payload = parsed.payload as Record<string, unknown>;
+    const issues = [...validateRequiredString(payload, 'request', 8, 'body')];
+    const audienceResult = validateOptionalAudience(payload, 'audience', 'it');
+    issues.push(...audienceResult.issues);
+    if (issues.length > 0) {
+      return validationResponse(issues);
+    }
+    return jsonResponse(
+      buildPlan({
+        request: payload.request as string,
+        audience: audienceResult.value,
+      }),
+    );
   }
   if ((pathname === '/api/rollout-packet/preview' || pathname === '/api/guides/preview') && method === 'POST') {
-    const body = (await request.json()) as { title: string; audience: string; body: string };
-    return jsonResponse(previewRolloutPacket(body));
+    const parsed = await parseJsonBody(request);
+    if (parsed.error) {
+      return parsed.error;
+    }
+    const payload = parsed.payload as Record<string, unknown>;
+    const issues = [
+      ...validateRequiredString(payload, 'title', 3, 'body'),
+      ...validateRequiredString(payload, 'purpose', 8, 'body'),
+      ...validateRequiredString(payload, 'body', 20, 'body'),
+    ];
+    const audienceResult = validateRequiredAudience(payload, 'audience');
+    issues.push(...audienceResult.issues);
+    if (issues.length > 0) {
+      return validationResponse(issues);
+    }
+    return jsonResponse(
+      previewRolloutPacket({
+        title: payload.title as string,
+        audience: audienceResult.value as Audience,
+        body: payload.body as string,
+      }),
+    );
   }
   return null;
 }
@@ -443,3 +623,5 @@ export default {
     return env.ASSETS.fetch(request);
   },
 };
+
+export { handleApi };
