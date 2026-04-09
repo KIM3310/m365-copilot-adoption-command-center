@@ -355,6 +355,12 @@ textarea {
   gap: 10px;
 }
 
+.status-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .search-title {
   display: block;
   font-weight: 700;
@@ -413,12 +419,47 @@ textarea {
   color: var(--rose);
 }
 
+.table-wrap {
+  overflow-x: auto;
+  border-radius: 16px;
+  border: 1px solid rgba(23, 50, 77, 0.08);
+  background: rgba(248, 252, 255, 0.96);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 520px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(23, 50, 77, 0.08);
+  text-align: left;
+  vertical-align: top;
+}
+
+.data-table th {
+  color: var(--ink);
+  background: rgba(213, 239, 255, 0.42);
+  font-size: 0.84rem;
+  letter-spacing: 0.03em;
+}
+
+.data-table td {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
 @media (max-width: 980px) {
   .hero,
   .two-column,
   .cards-2,
   .hero-panel,
-  .split-list {
+  .split-list,
+  .status-grid {
     grid-template-columns: 1fr;
   }
 

@@ -463,6 +463,42 @@ function previewRolloutPacket(payload: { title: string; audience: Audience; body
   };
 }
 
+function snowflakeStatusStub() {
+  return {
+    backend_supported: false,
+    configured: false,
+    message:
+      'Snowflake direct connectivity is implemented in the Python backend. The Cloudflare Worker deployment exposes a stub status only.',
+    connection: {
+      config_source: 'cloudflare-worker',
+      connection_name: null,
+      account: null,
+      user: null,
+      warehouse: null,
+      database: null,
+      schema: null,
+      role: null,
+      authenticator: null,
+      profile_path: null,
+    },
+    query_examples: [
+      'select current_account() as account, current_user() as username, current_warehouse() as warehouse, current_database() as database_name, current_schema() as schema_name',
+      'select table_catalog, table_schema, table_name from information_schema.tables order by table_schema, table_name limit 10',
+      'show schemas',
+    ],
+    probe: {
+      status: 'not-run',
+      account: null,
+      user: null,
+      warehouse: null,
+      database: null,
+      schema: null,
+      query_id: null,
+      error: null,
+    },
+  };
+}
+
 async function handleApi(request: Request, url: URL): Promise<Response | null> {
   const pathname = url.pathname;
   const method = request.method.toUpperCase();
@@ -534,6 +570,18 @@ async function handleApi(request: Request, url: URL): Promise<Response | null> {
         'how to handle quality, fear, and safety objections in workshops',
       ],
     });
+  }
+  if (pathname === '/api/snowflake/status' && method === 'GET') {
+    return jsonResponse(snowflakeStatusStub());
+  }
+  if (pathname === '/api/snowflake/query' && method === 'POST') {
+    return jsonResponse(
+      {
+        detail:
+          'Snowflake query execution is available in the Python backend only. Run the local FastAPI service to execute live Snowflake queries.',
+      },
+      501,
+    );
   }
   if (pathname === '/api/search' && method === 'GET') {
     const q = url.searchParams.get('q');

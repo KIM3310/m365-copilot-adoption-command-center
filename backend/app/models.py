@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-from typing import List, Literal
+from typing import Any, Dict, List, Literal, Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 ProgramTrack = Literal[
@@ -16,6 +16,7 @@ Audience = Literal["all", "executive", "it", "finance", "legal", "customer-servi
 StatusTone = Literal["healthy", "watch", "risk"]
 FacilitationType = Literal["decision", "parking-lot", "timer", "readout"]
 SupportTier = Literal["tier-0", "tier-1", "tier-2", "tier-3"]
+SnowflakeConfigSource = Literal["env", "connections.toml", "config.toml", "cloudflare-worker", "unconfigured"]
 
 
 class UseCase(BaseModel):
@@ -241,3 +242,57 @@ class OverviewPayload(BaseModel):
     training_sessions: List[TrainingSession]
     facilitation_items: List[FacilitationItem]
     objection_log: List[Experiment]
+
+
+class SnowflakeConnectionInfo(BaseModel):
+    model_config = ConfigDict(populate_by_name=True)
+
+    config_source: SnowflakeConfigSource
+    connection_name: Optional[str] = None
+    account: Optional[str] = None
+    user: Optional[str] = None
+    warehouse: Optional[str] = None
+    database: Optional[str] = None
+    schema_name: Optional[str] = Field(default=None, alias="schema")
+    role: Optional[str] = None
+    authenticator: Optional[str] = None
+    profile_path: Optional[str] = None
+
+
+class SnowflakeProbeResult(BaseModel):
+    model_config = ConfigDict(populate_by_name=True)
+
+    status: Literal["not-run", "connected", "error"]
+    account: Optional[str] = None
+    user: Optional[str] = None
+    warehouse: Optional[str] = None
+    database: Optional[str] = None
+    schema_name: Optional[str] = Field(default=None, alias="schema")
+    query_id: Optional[str] = None
+    error: Optional[str] = None
+
+
+class SnowflakeStatusResponse(BaseModel):
+    backend_supported: bool
+    configured: bool
+    message: str
+    connection: SnowflakeConnectionInfo
+    query_examples: List[str]
+    probe: SnowflakeProbeResult
+
+
+class SnowflakeQueryRequest(BaseModel):
+    sql: str = Field(..., min_length=6)
+    max_rows: int = Field(default=25, ge=1, le=200)
+
+
+class SnowflakeQueryResponse(BaseModel):
+    ok: bool
+    executed_sql: str
+    query_id: Optional[str] = None
+    columns: List[str]
+    rows: List[Dict[str, Any]]
+    row_count: int
+    truncated: bool
+    duration_ms: int
+    connection: SnowflakeConnectionInfo

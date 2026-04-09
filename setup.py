@@ -8,6 +8,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         "fastapi>=0.111,<1.0",
+        "snowflake-connector-python>=3.17,<4.0",
         "uvicorn>=0.30,<1.0",
     ],
     extras_require={

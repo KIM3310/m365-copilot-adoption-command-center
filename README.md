@@ -103,6 +103,31 @@ Files involved:
 - [`cloudflare/worker.ts`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/cloudflare/worker.ts)
 - [`scripts/export_cloudflare_data.py`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/scripts/export_cloudflare_data.py)
 
+## Snowflake Integration
+
+This project now includes actual Snowflake integration code in the Python backend.
+
+What is implemented:
+
+- backend connection discovery from `SNOWFLAKE_*` environment variables
+- backend connection discovery from local `~/.snowflake/connections.toml`
+- live connection probe endpoint
+- read-only Snowflake query preview endpoint
+- frontend panel for connection status, probe results, and preview query results
+
+Files involved:
+
+- [`backend/app/snowflake_service.py`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/backend/app/snowflake_service.py)
+- [`backend/app/main.py`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/backend/app/main.py)
+- [`src/App.tsx`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx)
+- [`.env.example`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/.env.example)
+
+Notes:
+
+- The Cloudflare Worker deployment exposes a backend-only Snowflake stub because the live Worker does not run the Python connector.
+- The local FastAPI backend can execute real Snowflake queries when your profile or credentials are valid.
+- The query runner is intentionally restricted to read-only statements such as `SELECT`, `WITH`, `SHOW`, and `DESCRIBE`.
+
 ## GitHub Actions
 
 GitHub Actions is configured for both validation and deployment:

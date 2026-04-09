@@ -26,6 +26,8 @@ from .data import (
     USE_CASES,
 )
 from .models import GuideDetail, OverviewPayload, RolloutPacketPreviewRequest, SearchResponse, SearchResult
+from .models import SnowflakeQueryRequest
+from .snowflake_service import SnowflakeServiceError, get_snowflake_status, run_snowflake_query
 
 
 app = FastAPI(
@@ -188,6 +190,19 @@ def get_runtime_brief() -> dict:
             "how to handle quality, fear, and safety objections in workshops",
         ],
     }
+
+
+@app.get("/api/snowflake/status")
+def get_snowflake_connector_status(probe: bool = Query(default=False)) -> dict:
+    return get_snowflake_status(probe=probe).model_dump(by_alias=True)
+
+
+@app.post("/api/snowflake/query")
+def post_snowflake_query(payload: SnowflakeQueryRequest) -> dict:
+    try:
+        return run_snowflake_query(payload).model_dump(by_alias=True)
+    except SnowflakeServiceError as exc:
+        raise HTTPException(status_code=exc.status_code, detail=str(exc)) from exc
 
 
 @app.get("/api/search")

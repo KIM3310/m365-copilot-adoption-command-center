@@ -211,6 +211,51 @@ export interface RolloutPacketPreviewResponse {
   talking_points: string[];
 }
 
+export interface SnowflakeConnectionInfo {
+  config_source: 'env' | 'connections.toml' | 'config.toml' | 'cloudflare-worker' | 'unconfigured';
+  connection_name: string | null;
+  account: string | null;
+  user: string | null;
+  warehouse: string | null;
+  database: string | null;
+  schema: string | null;
+  role: string | null;
+  authenticator: string | null;
+  profile_path: string | null;
+}
+
+export interface SnowflakeProbeResult {
+  status: 'not-run' | 'connected' | 'error';
+  account: string | null;
+  user: string | null;
+  warehouse: string | null;
+  database: string | null;
+  schema: string | null;
+  query_id: string | null;
+  error: string | null;
+}
+
+export interface SnowflakeStatusResponse {
+  backend_supported: boolean;
+  configured: boolean;
+  message: string;
+  connection: SnowflakeConnectionInfo;
+  query_examples: string[];
+  probe: SnowflakeProbeResult;
+}
+
+export interface SnowflakeQueryResponse {
+  ok: boolean;
+  executed_sql: string;
+  query_id: string | null;
+  columns: string[];
+  rows: Array<Record<string, unknown>>;
+  row_count: number;
+  truncated: boolean;
+  duration_ms: number;
+  connection: SnowflakeConnectionInfo;
+}
+
 export interface OverviewPayload {
   summary: OverviewSummary;
   delivery_metrics: DeliveryMetric[];

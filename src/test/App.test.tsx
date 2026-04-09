@@ -165,6 +165,51 @@ const packetPreviewPayload = {
   talking_points: ['What pain point are we removing?'],
 };
 
+const snowflakeStatusPayload = {
+  backend_supported: true,
+  configured: true,
+  message:
+    'Detected Snowflake connection profile `default` from `/Users/dolphin/.snowflake/connections.toml`. Run a probe to validate the current browser or SSO session.',
+  connection: {
+    config_source: 'connections.toml',
+    connection_name: 'default',
+    account: 'kp57591.ap-northeast-2.aws',
+    user: 'EHDJS0836',
+    warehouse: 'COMPUTE_WH',
+    database: 'DISTRICTPILOT_AI',
+    schema: 'ANALYTICS',
+    role: 'ACCOUNTADMIN',
+    authenticator: 'externalbrowser',
+    profile_path: '/Users/dolphin/.snowflake/connections.toml',
+  },
+  query_examples: [
+    'select current_account() as account',
+    'show schemas',
+  ],
+  probe: {
+    status: 'not-run',
+    account: null,
+    user: null,
+    warehouse: null,
+    database: null,
+    schema: null,
+    query_id: null,
+    error: null,
+  },
+};
+
+const snowflakeQueryPayload = {
+  ok: true,
+  executed_sql: 'select current_account() as account',
+  query_id: '01a-query',
+  columns: ['ACCOUNT'],
+  rows: [{ ACCOUNT: 'KP57591' }],
+  row_count: 1,
+  truncated: false,
+  duration_ms: 82,
+  connection: snowflakeStatusPayload.connection,
+};
+
 describe('App', () => {
   const fetchMock = vi.fn();
 
@@ -174,8 +219,14 @@ describe('App', () => {
       if (url.includes('/api/overview')) {
         return Promise.resolve(new Response(JSON.stringify(overviewPayload), { status: 200 }));
       }
+      if (url.includes('/api/snowflake/status')) {
+        return Promise.resolve(new Response(JSON.stringify(snowflakeStatusPayload), { status: 200 }));
+      }
       if (url.includes('/api/guides/guide-001')) {
         return Promise.resolve(new Response(JSON.stringify(guideDetailPayload), { status: 200 }));
+      }
+      if (url.includes('/api/snowflake/query') && init?.method === 'POST') {
+        return Promise.resolve(new Response(JSON.stringify(snowflakeQueryPayload), { status: 200 }));
       }
       if (url.includes('/api/assistant/plan') && init?.method === 'POST') {
         return Promise.resolve(new Response(JSON.stringify(planPayload), { status: 200 }));
@@ -220,6 +271,8 @@ describe('App', () => {
     await screen.findByText('Finance Close Copilot Sprint');
     await screen.findByText('ADKAR-style readiness scorecard');
     await screen.findByText('Feedback and support operating model');
+    await screen.findByText('Snowflake connector status');
+    await screen.findByText('kp57591.ap-northeast-2.aws');
     await screen.findAllByText('Copilot Readiness Assessment Playbook');
     await screen.findByText((content) => content.includes('Guide body preview'));
   });
@@ -251,5 +304,16 @@ describe('App', () => {
     await waitFor(() => {
       expect(screen.getByText('1 matches')).toBeInTheDocument();
     });
+  });
+
+  it('can run a Snowflake preview query', async () => {
+    render(<App />);
+
+    const queryButton = await screen.findByRole('button', { name: 'Run Snowflake preview query' });
+    fireEvent.click(queryButton);
+
+    await screen.findByText('Last Snowflake result');
+    await screen.findByText((content) => content.includes('01a-query'));
+    await screen.findByText('KP57591');
   });
 });

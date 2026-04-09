@@ -53,4 +53,13 @@ describe('cloudflare worker validation parity', () => {
     const body = (await response.json()) as { recommended_program: string };
     expect(body.recommended_program).toBe('Finance Close Copilot Sprint');
   });
+
+  it('returns a Snowflake backend-only stub from the worker runtime', async () => {
+    const response = await worker.fetch(new Request('https://example.com/api/snowflake/status'), env);
+    expect(response.status).toBe(200);
+
+    const body = (await response.json()) as { backend_supported: boolean; connection: { config_source: string } };
+    expect(body.backend_supported).toBe(false);
+    expect(body.connection.config_source).toBe('cloudflare-worker');
+  });
 });

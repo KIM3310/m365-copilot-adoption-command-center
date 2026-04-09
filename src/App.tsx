@@ -6,6 +6,8 @@ import type {
   PlanResponse,
   RolloutPacketPreviewResponse,
   SearchResponse,
+  SnowflakeQueryResponse,
+  SnowflakeStatusResponse,
   StatusTone,
 } from './types';
 
@@ -35,6 +37,16 @@ function toneClass(status: StatusTone): string {
     watch: 'tone-watch',
     risk: 'tone-risk',
   }[status];
+}
+
+function renderCellValue(value: unknown): string {
+  if (value === null || value === undefined) {
+    return 'null';
+  }
+  if (typeof value === 'object') {
+    return JSON.stringify(value);
+  }
+  return String(value);
 }
 
 function App() {
@@ -81,6 +93,15 @@ function App() {
   const [packetPreview, setPacketPreview] = useState<RolloutPacketPreviewResponse | null>(null);
   const [previewing, setPreviewing] = useState(false);
 
+  const [snowflakeStatus, setSnowflakeStatus] = useState<SnowflakeStatusResponse | null>(null);
+  const [snowflakeLoading, setSnowflakeLoading] = useState(true);
+  const [snowflakeSql, setSnowflakeSql] = useState(
+    'select current_account() as account, current_user() as username, current_warehouse() as warehouse, current_database() as database_name, current_schema() as schema_name',
+  );
+  const [snowflakeQuery, setSnowflakeQuery] = useState<SnowflakeQueryResponse | null>(null);
+  const [snowflakeQuerying, setSnowflakeQuerying] = useState(false);
+  const [snowflakeProbing, setSnowflakeProbing] = useState(false);
+
   const deferredUseCaseQuery = useDeferredValue(useCaseQuery);
   const deferredGuideQuery = useDeferredValue(guideQuery);
 
@@ -100,6 +121,24 @@ function App() {
         setError(err instanceof Error ? err.message : 'failed to load overview');
       } finally {
         setLoading(false);
+      }
+    };
+    void run();
+  }, []);
+
+  useEffect(() => {
+    const run = async () => {
+      try {
+        const response = await fetch(`${API_BASE}/api/snowflake/status`);
+        if (!response.ok) {
+          throw new Error('snowflake status fetch failed');
+        }
+        const payload: SnowflakeStatusResponse = await response.json();
+        startTransition(() => setSnowflakeStatus(payload));
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'failed to load snowflake status');
+      } finally {
+        setSnowflakeLoading(false);
       }
     };
     void run();
@@ -192,6 +231,46 @@ function App() {
       setError(err instanceof Error ? err.message : 'packet preview failed');
     } finally {
       setPreviewing(false);
+    }
+  };
+
+  const handleSnowflakeProbe = async () => {
+    setSnowflakeProbing(true);
+    setError(null);
+    try {
+      const response = await fetch(`${API_BASE}/api/snowflake/status?probe=true`);
+      if (!response.ok) {
+        throw new Error('snowflake probe failed');
+      }
+      const payload: SnowflakeStatusResponse = await response.json();
+      startTransition(() => setSnowflakeStatus(payload));
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'snowflake probe failed');
+    } finally {
+      setSnowflakeProbing(false);
+    }
+  };
+
+  const handleSnowflakeQuery = async (event: FormEvent) => {
+    event.preventDefault();
+    setSnowflakeQuerying(true);
+    setError(null);
+    try {
+      const response = await fetch(`${API_BASE}/api/snowflake/query`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sql: snowflakeSql, max_rows: 25 }),
+      });
+      if (!response.ok) {
+        const body = (await response.json()) as { detail?: string };
+        throw new Error(body.detail ?? 'snowflake query failed');
+      }
+      const payload: SnowflakeQueryResponse = await response.json();
+      startTransition(() => setSnowflakeQuery(payload));
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'snowflake query failed');
+    } finally {
+      setSnowflakeQuerying(false);
     }
   };
 
@@ -530,6 +609,165 @@ function App() {
                   </article>
                 ))}
               </div>
+            </div>
+          </section>
+
+          <section className="section two-column">
+            <div>
+              <div className="section-heading">
+                <span className="eyebrow">Telemetry</span>
+                <h2>Snowflake connector status</h2>
+              </div>
+              <div className="stack">
+                <article className="card">
+                  <div className="card-topline">
+                    <span
+                      className={
+                        snowflakeStatus?.probe.status === 'connected'
+                          ? 'pill-good'
+                          : snowflakeStatus?.configured
+                            ? 'pill'
+                            : 'pill-risk'
+                      }
+                    >
+                      {snowflakeLoading
+                        ? 'loading'
+                        : snowflakeStatus?.probe.status === 'connected'
+                          ? 'connected'
+                          : snowflakeStatus?.configured
+                            ? 'configured'
+                            : 'not configured'}
+                    </span>
+                    <span className="muted">
+                      {snowflakeStatus?.connection.config_source ?? 'discovering'}
+                    </span>
+                  </div>
+                  <h3>Real Snowflake integration path</h3>
+                  <p>
+                    {snowflakeStatus?.message ??
+                      'The backend can use a local Snowflake profile or explicit credentials for live telemetry queries.'}
+                  </p>
+                  {snowflakeStatus && (
+                    <div className="status-grid top-gap">
+                      <span>
+                        <strong>Connection:</strong> {snowflakeStatus.connection.connection_name ?? 'direct env'}
+                      </span>
+                      <span>
+                        <strong>Account:</strong> {snowflakeStatus.connection.account ?? 'not detected'}
+                      </span>
+                      <span>
+                        <strong>User:</strong> {snowflakeStatus.connection.user ?? 'not detected'}
+                      </span>
+                      <span>
+                        <strong>Warehouse:</strong> {snowflakeStatus.connection.warehouse ?? 'not detected'}
+                      </span>
+                      <span>
+                        <strong>Database:</strong> {snowflakeStatus.connection.database ?? 'not detected'}
+                      </span>
+                      <span>
+                        <strong>Schema:</strong> {snowflakeStatus.connection.schema ?? 'not detected'}
+                      </span>
+                      <span>
+                        <strong>Authenticator:</strong> {snowflakeStatus.connection.authenticator ?? 'default'}
+                      </span>
+                    </div>
+                  )}
+
+                  {snowflakeStatus?.probe.status === 'error' && (
+                    <div className="notice notice-error top-gap">
+                      Probe failed: {snowflakeStatus.probe.error}
+                    </div>
+                  )}
+
+                  {snowflakeStatus?.probe.status === 'connected' && (
+                    <div className="notice top-gap">
+                      Connected as {snowflakeStatus.probe.user} on {snowflakeStatus.probe.account} using{' '}
+                      {snowflakeStatus.probe.warehouse}.
+                    </div>
+                  )}
+
+                  <div className="hero-actions top-gap">
+                    <button type="button" onClick={handleSnowflakeProbe}>
+                      {snowflakeProbing ? 'Probing...' : 'Probe Snowflake connection'}
+                    </button>
+                  </div>
+                </article>
+
+                <article className="card">
+                  <h3>Query examples</h3>
+                  <div className="chip-row">
+                    {snowflakeStatus?.query_examples.map((item) => (
+                      <button
+                        key={item}
+                        type="button"
+                        className="ghost chip-button"
+                        onClick={() => setSnowflakeSql(item)}
+                      >
+                        {item}
+                      </button>
+                    ))}
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div>
+              <div className="section-heading">
+                <span className="eyebrow">Query Preview</span>
+                <h2>Read-only Snowflake query runner</h2>
+              </div>
+              <form className="card form-card" onSubmit={handleSnowflakeQuery}>
+                <label className="field">
+                  <span>SQL</span>
+                  <textarea value={snowflakeSql} onChange={(event) => setSnowflakeSql(event.target.value)} rows={7} />
+                </label>
+                <button type="submit">{snowflakeQuerying ? 'Running...' : 'Run Snowflake preview query'}</button>
+              </form>
+
+              {snowflakeQuery ? (
+                <div className="stack top-gap">
+                  <article className="card">
+                    <div className="card-topline">
+                      <span className="pill-good">{snowflakeQuery.row_count} rows</span>
+                      <span className="muted">{snowflakeQuery.duration_ms} ms</span>
+                    </div>
+                    <h3>Last Snowflake result</h3>
+                    <p className="workflow">Query ID: {snowflakeQuery.query_id ?? 'not available'}</p>
+                    <pre className="markdown-preview">{snowflakeQuery.executed_sql}</pre>
+                  </article>
+
+                  <article className="card">
+                    <div className="table-wrap">
+                      <table className="data-table">
+                        <thead>
+                          <tr>
+                            {snowflakeQuery.columns.map((column) => (
+                              <th key={column}>{column}</th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {snowflakeQuery.rows.map((row, index) => (
+                            <tr key={`snowflake-row-${index}`}>
+                              {snowflakeQuery.columns.map((column) => (
+                                <td key={`${index}-${column}`}>{renderCellValue(row[column])}</td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    {snowflakeQuery.truncated && (
+                      <p className="muted top-gap">Results were truncated to keep the interview preview lightweight.</p>
+                    )}
+                  </article>
+                </div>
+              ) : (
+                <article className="card top-gap">
+                  <h3>No Snowflake result yet</h3>
+                  <p>Run a read-only query to prove the project can use live telemetry instead of synthetic metrics alone.</p>
+                </article>
+              )}
             </div>
           </section>
 
