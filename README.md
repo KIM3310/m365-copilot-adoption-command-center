@@ -1,5 +1,8 @@
 # Microsoft 365 Copilot Adoption Command Center
 
+[![CI](https://github.com/KIM3310/m365-copilot-adoption-command-center/actions/workflows/ci.yml/badge.svg)](https://github.com/KIM3310/m365-copilot-adoption-command-center/actions/workflows/ci.yml)
+[![Deploy Worker](https://github.com/KIM3310/m365-copilot-adoption-command-center/actions/workflows/deploy.yml/badge.svg)](https://github.com/KIM3310/m365-copilot-adoption-command-center/actions/workflows/deploy.yml)
+
 Portfolio-safe project tailored for the **AI Adoption Architect / Consultant** role at Microsoft.
 
 This repository is not a fake customer story. It is a synthetic enterprise rollout simulation designed to show how I would:
@@ -40,6 +43,12 @@ This repository is not a fake customer story. It is a synthetic enterprise rollo
 - **FastAPI backend** with deterministic planning and packet checks
 - **Guide library** for readiness, champions, governance, value measurement, and facilitation
 - **Interview pack** with talk track and English Q&A prep
+
+## Live links
+
+- GitHub: [KIM3310/m365-copilot-adoption-command-center](https://github.com/KIM3310/m365-copilot-adoption-command-center)
+- Live app: [m365-copilot-adoption-command-center.ehdjs1351.workers.dev](https://m365-copilot-adoption-command-center.ehdjs1351.workers.dev)
+- Health check: [api/healthz](https://m365-copilot-adoption-command-center.ehdjs1351.workers.dev/api/healthz)
 
 ## Quick start
 
@@ -93,6 +102,18 @@ Files involved:
 - [`wrangler.jsonc`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/wrangler.jsonc)
 - [`cloudflare/worker.ts`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/cloudflare/worker.ts)
 - [`scripts/export_cloudflare_data.py`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/scripts/export_cloudflare_data.py)
+
+## GitHub Actions
+
+GitHub Actions is configured for both validation and deployment:
+
+- `CI`: runs backend tests, frontend tests, regenerates the Cloudflare data bundle, verifies generated code is committed, and builds the production frontend.
+- `Deploy Worker`: reruns validation on `main`, performs a dry-run deploy, deploys to Cloudflare, and smoke-tests `/api/healthz`.
+
+Workflow files:
+
+- [`.github/workflows/ci.yml`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/.github/workflows/ci.yml)
+- [`.github/workflows/deploy.yml`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/.github/workflows/deploy.yml)
 
 ## API summary
 

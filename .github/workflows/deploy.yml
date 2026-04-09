@@ -1,0 +1,70 @@
+name: Deploy Worker
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-worker
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: production
+      url: https://m365-copilot-adoption-command-center.ehdjs1351.workers.dev
+
+    env:
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Install Node.js dependencies
+        run: npm ci
+
+      - name: Run backend tests
+        run: python -m pytest
+
+      - name: Run frontend tests
+        run: npm run test
+
+      - name: Regenerate Cloudflare data bundle
+        run: npm run cf:export-data
+
+      - name: Verify generated bundle is committed
+        run: git diff --exit-code -- cloudflare/generated/static-data.ts
+
+      - name: Build application
+        run: npm run build
+
+      - name: Validate Cloudflare deployment
+        run: npx wrangler deploy --dry-run
+
+      - name: Deploy Worker
+        run: npx wrangler deploy
+
+      - name: Smoke test production API
+        run: curl --fail --silent https://m365-copilot-adoption-command-center.ehdjs1351.workers.dev/api/healthz
