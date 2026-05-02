@@ -11,7 +11,8 @@
     "cf:export-data": "python3 scripts/export_cloudflare_data.py",
     "cf:prepare": "npm run cf:export-data && npm run build",
     "cf:check": "npm run cf:prepare && npx wrangler deploy --dry-run",
-    "cf:deploy": "npm run cf:prepare && npx wrangler deploy"
+    "cf:deploy": "npm run cf:prepare && npx wrangler deploy",
+    "verify": "npm test && npm run build"
   },
   "dependencies": {
     "react": "^19.2.0",
