@@ -99,9 +99,9 @@ npm run cf:deploy
 
 Files involved:
 
-- [`wrangler.jsonc`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/wrangler.jsonc)
-- [`cloudflare/worker.ts`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/cloudflare/worker.ts)
-- [`scripts/export_cloudflare_data.py`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/scripts/export_cloudflare_data.py)
+- [`wrangler.jsonc`](wrangler.jsonc)
+- [`cloudflare/worker.ts`](cloudflare/worker.ts)
+- [`scripts/export_cloudflare_data.py`](scripts/export_cloudflare_data.py)
 
 ## Snowflake Integration
 
@@ -117,10 +117,10 @@ What is implemented:
 
 Files involved:
 
-- [`backend/app/snowflake_service.py`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/backend/app/snowflake_service.py)
-- [`backend/app/main.py`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/backend/app/main.py)
-- [`src/App.tsx`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx)
-- [`.env.example`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/.env.example)
+- [`backend/app/snowflake_service.py`](backend/app/snowflake_service.py)
+- [`backend/app/main.py`](backend/app/main.py)
+- [`src/App.tsx`](src/App.tsx)
+- [`.env.example`](.env.example)
 
 Notes:
 
@@ -137,8 +137,8 @@ GitHub Actions is configured for both validation and deployment:
 
 Workflow files:
 
-- [`.github/workflows/ci.yml`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/.github/workflows/ci.yml)
-- [`.github/workflows/deploy.yml`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/.github/workflows/deploy.yml)
+- [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
+- [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)
 
 ## Security Hardening
 
@@ -160,7 +160,7 @@ Why this matters:
 
 Hardening runbook:
 
-- [`docs/production_hardening.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/production_hardening.md)
+- [`docs/production_hardening.md`](docs/production_hardening.md)
 
 ## API summary
 
@@ -190,21 +190,21 @@ Hardening runbook:
 
 ## Documentation map
 
-- [`docs/ai_assistant_readiness_assessment.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/ai_assistant_readiness_assessment.md)
-- [`docs/ai_assistant_business_case_playbook.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/ai_assistant_business_case_playbook.md)
-- [`docs/champion_launch_kit.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/champion_launch_kit.md)
-- [`docs/prompt_review_standard.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/prompt_review_standard.md)
-- [`docs/multi_geo_change_comms.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/multi_geo_change_comms.md)
-- [`docs/value_realization_kpi_dictionary.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/value_realization_kpi_dictionary.md)
-- [`docs/feedback_support_operating_model.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/feedback_support_operating_model.md)
-- [`docs/facilitation_toolkit.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/facilitation_toolkit.md)
-- [`docs/capability_fit.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/capability_fit.md)
-- [`docs/requirement_alignment_matrix.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/requirement_alignment_matrix.md)
-- [`docs/system_walkthrough_english.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/system_walkthrough_english.md)
-- [`docs/operating_story_bank.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/operating_story_bank.md)
-- [`docs/rollout_plan.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/rollout_plan.md)
-- [`docs/walkthrough_storyline.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/walkthrough_storyline.md)
-- [`docs/english_technical_qna.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/english_technical_qna.md)
+- [`docs/ai_assistant_readiness_assessment.md`](docs/ai_assistant_readiness_assessment.md)
+- [`docs/ai_assistant_business_case_playbook.md`](docs/ai_assistant_business_case_playbook.md)
+- [`docs/champion_launch_kit.md`](docs/champion_launch_kit.md)
+- [`docs/prompt_review_standard.md`](docs/prompt_review_standard.md)
+- [`docs/multi_geo_change_comms.md`](docs/multi_geo_change_comms.md)
+- [`docs/value_realization_kpi_dictionary.md`](docs/value_realization_kpi_dictionary.md)
+- [`docs/feedback_support_operating_model.md`](docs/feedback_support_operating_model.md)
+- [`docs/facilitation_toolkit.md`](docs/facilitation_toolkit.md)
+- [`docs/capability_fit.md`](docs/capability_fit.md)
+- [`docs/requirement_alignment_matrix.md`](docs/requirement_alignment_matrix.md)
+- [`docs/system_walkthrough_english.md`](docs/system_walkthrough_english.md)
+- [`docs/operating_story_bank.md`](docs/operating_story_bank.md)
+- [`docs/rollout_plan.md`](docs/rollout_plan.md)
+- [`docs/walkthrough_storyline.md`](docs/walkthrough_storyline.md)
+- [`docs/english_technical_qna.md`](docs/english_technical_qna.md)
 
 ## Structure
 

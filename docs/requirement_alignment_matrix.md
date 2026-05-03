@@ -1,37 +1,29 @@
-# Requirement Alignment Matrix
+# System Alignment Matrix
 
-This matrix maps the Enterprise AI Adoption Consultant operating requirements to concrete evidence in the project.
+This matrix maps the AI assistant adoption operating model to concrete implementation evidence in the project. It is written as a technical review surface, not as a personnel or organization-specific claim.
 
-## Required Qualifications
+## Capability Alignment
 
-| Job description item | Project evidence | Honest note |
+| Capability area | Project evidence | Boundary note |
 | --- | --- | --- |
-| Proven experience in enterprise consulting, digital transformation, or business change enablement | [role_fit.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/capability_fit.md), [walkthrough_storyline.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/walkthrough_storyline.md), dashboard capability-fit section | A project can show consulting structure and thinking, but it cannot replace real years of client delivery experience. |
-| Experience leading use case identification and business case development for new AI technologies | [copilot_business_case_playbook.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/ai_assistant_business_case_playbook.md), business-case view in [App.tsx](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx#L426), planner logic in [agents.py](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/backend/app/agents.py#L196) | Strongly demonstrated. |
-| Demonstrated experience guiding enterprise AI assistant programs with large enterprise customers | Enterprise AI Assistant scenarios, persona portfolio, rollout waves, support model, business case, facilitation toolkit | The project proves readiness to discuss and design these programs; it does not prove real customer tenure by itself. |
-| Change Management - Facilitate AI assistant usage readiness assessments and develop action plans | [copilot_readiness_assessment.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/ai_assistant_readiness_assessment.md), readiness scorecard in [App.tsx](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx#L405) | Strongly demonstrated. |
-| Training Development – Design AI assistant usage training curricula | [champion_launch_kit.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/champion_launch_kit.md), training surfaces in [App.tsx](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx#L489) | Strongly demonstrated. |
-| Data Analysis - Design and interpret AI use adoption analytics and KPIs | [value_realization_kpi_dictionary.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/value_realization_kpi_dictionary.md), adoption analytics views in [App.tsx](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx#L533) | Strongly demonstrated. |
-| Feedback & Support - Implement feedback mechanisms and support systems | [feedback_support_operating_model.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/feedback_support_operating_model.md), support model in [App.tsx](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx#L510) | Now explicitly demonstrated. |
-| Value Measurement - Measure AI adoption success and drive value realization | planner output and KPI views in [agents.py](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/backend/app/agents.py#L222), [value_realization_kpi_dictionary.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/value_realization_kpi_dictionary.md) | Strongly demonstrated. |
-| Expertise on adoption and change management frameworks (e.g., Prosci or equivalent) | ADKAR framing in [copilot_readiness_assessment.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/ai_assistant_readiness_assessment.md) | Demonstrates framework fluency, not certification ownership. |
-| Strong understanding of AI, productivity transformation, organizational readiness, and skilling strategies | Overall architecture and documents | Strongly demonstrated. |
-| Proven ability to work cross-functionally with business, IT, and executive stakeholders | persona portfolio, stakeholder lists, facilitation board | A project can model this clearly, though real examples should also come from your spoken answers. |
-| Excellent communication, facilitation, and stakeholder engagement skills | [demo_script_english.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/system_walkthrough_english.md), [facilitation_toolkit.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/facilitation_toolkit.md) | Demonstrated through materials and talk track. |
-| Experience with internal communications, skilling, or change enablement programs in large organizations | [multi_geo_change_comms.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/multi_geo_change_comms.md), [champion_launch_kit.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/champion_launch_kit.md) | Strongly demonstrated. |
-| Experience working with adoption and success teams to accelerate impact and remove blockers | [feedback_support_operating_model.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/feedback_support_operating_model.md), support and feedback model in the UI | Explicitly demonstrated. |
-| Facilitate exec and practitioner discussions; keep decisions moving with visible timers, parking lot, and a decision log | [facilitation_toolkit.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/facilitation_toolkit.md), facilitation section in [App.tsx](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx#L572) | Strongly demonstrated. |
-| Facilitation & objection handling: Convert “AI fear/quality/safety” into experiments with owners and dates | experiment planner in [agents.py](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/backend/app/agents.py#L128), objection cards in [App.tsx](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx#L596) | Strongly demonstrated. |
+| Enterprise operating model | [capability_fit.md](capability_fit.md), [walkthrough_storyline.md](walkthrough_storyline.md), dashboard capability-fit section | Shows the structure and decision flow for a synthetic enterprise program. |
+| Use-case identification and business case design | [ai_assistant_business_case_playbook.md](ai_assistant_business_case_playbook.md), business-case view in [App.tsx](../src/App.tsx#L426), planner logic in [agents.py](../backend/app/agents.py#L196) | Demonstrates repeatable framing, value hypotheses, and prioritization logic. |
+| Large-scale AI assistant rollout planning | persona portfolio, rollout waves, support model, business case, facilitation toolkit | Models the rollout mechanics without claiming live tenant access. |
+| Readiness assessment and action planning | [ai_assistant_readiness_assessment.md](ai_assistant_readiness_assessment.md), readiness scorecard in [App.tsx](../src/App.tsx#L405) | Uses deterministic data and documented assumptions. |
+| Training and champion enablement | [champion_launch_kit.md](champion_launch_kit.md), training surfaces in [App.tsx](../src/App.tsx#L489) | Keeps learning assets reusable across synthetic personas. |
+| Adoption analytics and KPI interpretation | [value_realization_kpi_dictionary.md](value_realization_kpi_dictionary.md), adoption analytics views in [App.tsx](../src/App.tsx#L533) | Separates metric definitions from generated demo data. |
+| Feedback and support operations | [feedback_support_operating_model.md](feedback_support_operating_model.md), support model in [App.tsx](../src/App.tsx#L510) | Shows intake, routing, and closure loops with synthetic signals. |
+| Value realization measurement | planner output and KPI views in [agents.py](../backend/app/agents.py#L222), [value_realization_kpi_dictionary.md](value_realization_kpi_dictionary.md) | Demonstrates calculation paths and review cadence. |
+| Change framework fluency | ADKAR framing in [ai_assistant_readiness_assessment.md](ai_assistant_readiness_assessment.md) | Describes framework usage without external certification claims. |
+| Cross-functional stakeholder flow | persona portfolio, stakeholder lists, facilitation board | Keeps the workflow inspectable through UI and docs. |
+| Communication and facilitation | [system_walkthrough_english.md](system_walkthrough_english.md), [facilitation_toolkit.md](facilitation_toolkit.md) | Provides a repeatable talk track and decision-room structure. |
+| Multi-geo communication planning | [multi_geo_change_comms.md](multi_geo_change_comms.md), [champion_launch_kit.md](champion_launch_kit.md) | Models sequencing, localization, and channel governance. |
+| Support-team feedback loop | [feedback_support_operating_model.md](feedback_support_operating_model.md), support and feedback model in the UI | Connects adoption issues to owner, status, and next action. |
+| Decision facilitation | [facilitation_toolkit.md](facilitation_toolkit.md), facilitation section in [App.tsx](../src/App.tsx#L572) | Uses timers, parking lot, decision log, and action owners. |
+| Objection handling and experiment design | experiment planner in [agents.py](../backend/app/agents.py#L128), objection cards in [App.tsx](../src/App.tsx#L596) | Converts uncertainty into bounded experiments with owners and dates. |
 
-## Preferred Qualifications
+## Review Notes
 
-| Preferred item | Project evidence |
-| --- | --- |
-| Experience enabling champions communities at 1k+ scale | Champion model and capacity metrics in the dashboard and [champion_launch_kit.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/champion_launch_kit.md) |
-| Deep enablement for finance, legal, or customer service personas | Persona-specific use cases and business-case views in the dashboard |
-| Experience with Multi-geo/multilingual rollouts | [multi_geo_change_comms.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/multi_geo_change_comms.md), packet checks for geo and language |
-| Creation of learning assets and adoption analytics adoption views | training content, KPI dictionary, and adoption analytics view designs in the dashboard |
-
-## Certifications
-
-The project can support a strong walkthrough conversation around Prosci-style change management and AI fundamentals, but it cannot claim a certification you do not hold. If you do not have the certification yet, say so directly and position the project as proof of practical framework fluency.
+- The data, personas, and organization scenarios are synthetic.
+- The implementation is intended to show operating-model depth, software structure, and reviewable evidence paths.
+- Framework references are descriptive only and do not imply certification ownership.
