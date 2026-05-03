@@ -78,7 +78,7 @@ button {
 .card h3,
 .guide-card strong {
   font-family: "Sora", "Aptos", "Segoe UI", sans-serif;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 .hero h1 {

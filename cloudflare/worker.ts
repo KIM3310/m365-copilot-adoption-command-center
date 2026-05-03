@@ -554,7 +554,7 @@ async function handleApi(request: Request, url: URL): Promise<Response | null> {
   if ((pathname === '/api/capability-fit' || pathname === '/api/role-fit') && method === 'GET') {
     return jsonResponse({ items: overview.role_fit });
   }
-  if ((pathname === '/api/walkthrough/brief' || pathname === '/api/interview/brief') && method === 'GET') {
+  if (pathname === '/api/walkthrough/brief' && method === 'GET') {
     return jsonResponse({
       headline: 'Public-safe Enterprise AI Assistant adoption simulation for readiness, change, analytics, and value realization.',
       proof_points: [

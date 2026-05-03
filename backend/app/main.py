@@ -174,7 +174,6 @@ def get_role_fit() -> dict:
     return {"items": [card.model_dump() for card in ROLE_FIT_CARDS]}
 
 
-@app.get("/api/interview/brief", include_in_schema=False)
 @app.get("/api/walkthrough/brief")
 def get_runtime_brief() -> dict:
     return {
