@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "m365-copilot-adoption-command-center"
 version = "0.1.0"
-description = "Interview-ready Microsoft 365 Copilot adoption project with React, FastAPI, readiness planning, and value realization artifacts."
+description = "Enterprise AI assistant adoption project with React, FastAPI, readiness planning, and value realization artifacts."
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [

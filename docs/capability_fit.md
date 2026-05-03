@@ -1,4 +1,4 @@
-# Role Fit for Microsoft AI Adoption Architect / Consultant
+# Capability Fit for Enterprise AI Adoption Consultant
 
 ## Direct alignment
 
@@ -19,14 +19,14 @@ Each use case includes owners, guardrails, goals, and rollout wave logic.
 
 The project now also includes explicit business-case metrics and sponsor scorecard views so the value story is visible, not implied.
 
-### Microsoft 365 Copilot readiness, training, analytics, support, and value
+### Enterprise AI Assistant readiness, training, analytics, support, and value
 
 The repository explicitly includes:
 
 - readiness assessment playbook
 - business case playbook
 - champion and training kit
-- Power BI-style KPI dictionary
+- analytics-style KPI dictionary
 - rollout packet readiness checks
 - support and objection experiment model
 
@@ -36,7 +36,7 @@ The readiness playbook uses a practical ADKAR framing. It is not presented as a 
 
 ### Facilitation and stakeholder engagement
 
-The facilitation toolkit is a direct answer to the role requirement around:
+The facilitation toolkit is a direct answer to the operating requirement around:
 
 - executive discussions
 - practitioner workshops
@@ -49,10 +49,10 @@ The facilitation toolkit is a direct answer to the role requirement around:
 
 The support model is tiered, the feedback themes are visible, and blocker removal is treated as a weekly operating motion shared by adoption, support, and platform teams.
 
-## Why this is a strong interview project
+## Why this is a strong walkthrough project
 
-- It is role-specific instead of generic AI.
+- It is domain-specific instead of generic AI.
 - It is honest about being synthetic.
 - It shows both technical fluency and adoption fluency.
-- It gives the interviewer artifacts to react to.
+- It gives the walkthrougher artifacts to react to.
 - It creates a clear English talk track.

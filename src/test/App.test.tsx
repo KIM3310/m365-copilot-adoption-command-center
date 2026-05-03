@@ -33,7 +33,7 @@ const overviewPayload = {
   ],
   role_fit: [
     {
-      requirement: 'Copilot readiness assessments and action plans',
+      requirement: 'AI assistant readiness assessments and action plans',
       proof: 'direct proof',
       artifacts: ['artifact-a', 'artifact-b'],
     },
@@ -42,13 +42,13 @@ const overviewPayload = {
   use_cases: [
     {
       id: 'finance-close-copilot-sprint',
-      name: 'Finance Close Copilot Sprint',
+      name: 'Finance Close AI assistant Sprint',
       track: 'value-realization',
       audiences: ['finance', 'executive', 'it'],
       summary: 'finance summary',
-      workflow: 'Copilot in Excel, Teams, and Outlook',
+      workflow: 'AI assistant in Excel, Teams, and Outlook',
       stakeholders: ['Finance Controller'],
-      owner: 'Copilot Adoption Office',
+      owner: 'AI assistant Adoption Office',
       rollout_wave: 'Wave 1',
       goals: ['goal one'],
       guardrails: ['guardrail one'],
@@ -59,14 +59,14 @@ const overviewPayload = {
   guides: [
     {
       id: 'guide-001',
-      title: 'Copilot Readiness Assessment Playbook',
+      title: 'AI assistant Readiness Assessment Playbook',
       audience: 'it',
       category: 'assessment',
       summary: 'guide summary',
       tags: ['ADKAR'],
-      path: 'docs/copilot_readiness_assessment.md',
+      path: 'docs/ai_assistant_readiness_assessment.md',
       excerpt: 'guide excerpt',
-      owner: 'Copilot Adoption Office',
+      owner: 'AI assistant Adoption Office',
       distribution: ['project site'],
       last_updated: '2026-04-09',
     },
@@ -82,10 +82,10 @@ const overviewPayload = {
   ],
   training_sessions: [
     {
-      title: 'Executive Sponsor Copilot Briefing',
+      title: 'Executive Sponsor AI assistant Briefing',
       audience: 'executive',
       format: '30-minute decision briefing',
-      owner: 'Copilot Adoption Office',
+      owner: 'AI assistant Adoption Office',
       outcome: 'align sponsors',
     },
   ],
@@ -112,17 +112,17 @@ const overviewPayload = {
 
 const guideDetailPayload = {
   guide: overviewPayload.guides[0],
-  body: '# Copilot Readiness Assessment Playbook\n\nGuide body preview',
+  body: '# AI assistant Readiness Assessment Playbook\n\nGuide body preview',
 };
 
 const planPayload = {
-  recommended_program: 'Finance Close Copilot Sprint',
+  recommended_program: 'Finance Close AI assistant Sprint',
   recommended_track: 'value-realization',
   confidence_pct: 93,
-  owner_team: 'Copilot Adoption Office',
+  owner_team: 'AI assistant Adoption Office',
   exec_summary: 'Start with a 30-day finance pilot.',
   rollout_phases: ['baseline the workflow'],
-  prioritized_use_cases: ['Finance Close Copilot Sprint'],
+  prioritized_use_cases: ['Finance Close AI assistant Sprint'],
   business_case_actions: ['Define the sponsor-owned business problem'],
   readiness_actions: ['Score readiness'],
   training_actions: ['Run a finance prompt lab'],
@@ -144,8 +144,8 @@ const planPayload = {
   citations: [
     {
       guide_id: 'guide-001',
-      title: 'Copilot Readiness Assessment Playbook',
-      path: 'docs/copilot_readiness_assessment.md',
+      title: 'AI assistant Readiness Assessment Playbook',
+      path: 'docs/ai_assistant_readiness_assessment.md',
       reason: 'relevant guidance',
     },
   ],
@@ -160,7 +160,7 @@ const packetPreviewPayload = {
   readiness_score: 100,
   distribution_channels: ['finance leadership sync'],
   checklist: ['State the business problem'],
-  reviewers: ['Finance Controller'],
+  operators: ['Finance Controller'],
   warnings: [],
   talking_points: ['What pain point are we removing?'],
 };
@@ -244,9 +244,9 @@ describe('App', () => {
                 {
                   type: 'guide',
                   id: 'guide-001',
-                  title: 'Copilot Readiness Assessment Playbook',
+                  title: 'AI assistant Readiness Assessment Playbook',
                   summary: 'guide summary',
-                  path: 'docs/copilot_readiness_assessment.md',
+                  path: 'docs/ai_assistant_readiness_assessment.md',
                 },
               ],
             }),
@@ -267,25 +267,25 @@ describe('App', () => {
   it('renders overview content and guide detail', async () => {
     render(<App />);
 
-    await screen.findByRole('heading', { name: 'Microsoft 365 Copilot Adoption Command Center' });
-    await screen.findByText('Finance Close Copilot Sprint');
+    await screen.findByRole('heading', { name: 'Enterprise AI Assistant Adoption Command Center' });
+    await screen.findByText('Finance Close AI assistant Sprint');
     await screen.findByText('ADKAR-style readiness scorecard');
     await screen.findByText('Feedback and support operating model');
     await screen.findByText('Snowflake connector status');
     await screen.findByText('kp57591.ap-northeast-2.aws');
-    await screen.findAllByText('Copilot Readiness Assessment Playbook');
+    await screen.findAllByText('AI assistant Readiness Assessment Playbook');
     await screen.findByText((content) => content.includes('Guide body preview'));
   });
 
   it('runs planner and rollout packet preview flows', async () => {
     render(<App />);
 
-    const plannerButton = await screen.findByRole('button', { name: 'Build Copilot plan' });
+    const plannerButton = await screen.findByRole('button', { name: 'Build AI assistant plan' });
     fireEvent.click(plannerButton);
 
     await screen.findByText('93% confidence');
     await waitFor(() => {
-      expect(screen.getAllByText('Copilot Adoption Office').length).toBeGreaterThan(0);
+      expect(screen.getAllByText('AI assistant Adoption Office').length).toBeGreaterThan(0);
     });
 
     const previewButton = screen.getByRole('button', { name: 'Preview rollout packet' });

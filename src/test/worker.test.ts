@@ -51,7 +51,7 @@ describe('cloudflare worker validation parity', () => {
     expect(response.status).toBe(200);
 
     const body = (await response.json()) as { recommended_program: string };
-    expect(body.recommended_program).toBe('Finance Close Copilot Sprint');
+    expect(body.recommended_program).toBe('Finance Close AI assistant Sprint');
   });
 
   it('returns a Snowflake backend-only stub from the worker runtime', async () => {

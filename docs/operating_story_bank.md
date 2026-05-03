@@ -24,7 +24,7 @@ The group moved from abstract debate to concrete next steps with owners, dates, 
 
 ### Situation
 
-Some users were curious about AI, but others were worried about trust and job impact.
+Some users were curious about AI, but others were worried about trust and workflow impact.
 
 ### Task
 
@@ -32,7 +32,7 @@ I needed to keep the rollout credible and reduce resistance.
 
 ### Action
 
-I treated the concern as a change-management problem, not a messaging problem. I created reviewed examples, role-based training, and small experiments with clear success metrics.
+The workflow treats the concern as a change-management problem, not a messaging problem. I created reviewed examples, role-based training, and small experiments with clear success metrics.
 
 ### Result
 

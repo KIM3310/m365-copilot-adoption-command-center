@@ -112,15 +112,15 @@ def _prioritized_use_cases(primary: UseCase) -> List[str]:
     related = [primary.name]
     if "finance" in primary.id:
         related.append("Executive Briefing and Decision Recap Sprint")
-        related.append("Legal Matter Prep Copilot Sprint")
+        related.append("Legal Matter Prep AI assistant Sprint")
     elif "legal" in primary.id:
         related.append("Executive Briefing and Decision Recap Sprint")
-        related.append("Finance Close Copilot Sprint")
+        related.append("Finance Close AI assistant Sprint")
     elif "customer-service" in primary.id:
         related.append("Champion Community Launch Kit")
         related.append("Executive Briefing and Decision Recap Sprint")
     else:
-        related.append("Finance Close Copilot Sprint")
+        related.append("Finance Close AI assistant Sprint")
         related.append("Customer Service Resolution Drafting Sprint")
     return related
 
@@ -199,7 +199,7 @@ def build_plan(request: PlanRequest) -> PlanResponse:
         "Plan a 30-day and 90-day value review so the scale decision has a documented operating rhythm.",
     ]
     communications_actions = [
-        "Prepare a manager cascade with simple language on why Copilot is changing, what is in scope, and how to get help.",
+        "Prepare a manager cascade with simple language on why AI assistant is changing, what is in scope, and how to get help.",
         "Localize launch communications, FAQs, and examples for each geo before expanding the wave.",
         "Publish a short internal communications pack that reinforces safe-use boundaries and success stories.",
     ]
@@ -220,14 +220,14 @@ def build_plan(request: PlanRequest) -> PlanResponse:
     ]
 
     value_actions = [
-        "Track weekly active use, repeat use, quality approval, and support reopen rate in a Power BI-style sponsor view.",
+        "Track weekly active use, repeat use, quality approval, and support reopen rate in a analytics-style sponsor view.",
         "Run a 30-day value readout comparing baseline time, post-training behavior, and business-owner validation.",
         "Decide whether to scale, refine, or stop the wave based on KPI thresholds rather than enthusiasm alone.",
     ]
 
     risks = [
         "Do not scale based on seat activation alone; require repeat usage and manager-validated quality signals.",
-        "Keep Copilot positioned as a drafting accelerator, not an autonomous decision-maker, especially in regulated workflows.",
+        "Keep AI assistant positioned as a drafting accelerator, not an autonomous decision-maker, especially in regulated workflows.",
         "If the support model is unclear, adoption will stall even when training attendance looks strong.",
     ]
     if persona == "legal":
@@ -319,21 +319,21 @@ def preview_rollout_packet(payload: RolloutPacketPreviewRequest) -> RolloutPacke
         "champion": ["champion community hub", "monthly digest", "Q&A channel"],
         "all": ["project site", "manager cascade", "FAQ page"],
     }
-    reviewers = {
+    operators = {
         "executive": ["Executive Sponsor", "Change Lead", "Adoption Analytics Lead"],
-        "it": ["M365 Platform Lead", "Security Reviewer", "Change Lead"],
+        "it": ["M365 Platform Lead", "Security Operator", "Change Lead"],
         "finance": ["Finance Controller", "Change Lead", "Champion Manager"],
         "legal": ["General Counsel Delegate", "Compliance Lead", "Change Lead"],
         "customer-service": ["Service Director", "Regional Champion Manager", "Helpdesk Lead"],
         "champion": ["Champion Community Manager", "Change Lead", "Helpdesk Lead"],
-        "all": ["Change Lead", "Security Reviewer", "Communications Lead"],
+        "all": ["Change Lead", "Security Operator", "Communications Lead"],
     }
     checklist = [
         "State the business problem and who owns the decision.",
         "Include a baseline, target KPI, and review cadence.",
         "Describe the support path and champion model.",
         "Specify the rollout wave, geo scope, and language plan.",
-        "Call out what Copilot can do, cannot do, and when human review is required.",
+        "Call out what AI assistant can do, cannot do, and when human review is required.",
     ]
     talking_points = [
         "What pain point are we removing for this persona in the next 30 days?",
@@ -349,7 +349,7 @@ def preview_rollout_packet(payload: RolloutPacketPreviewRequest) -> RolloutPacke
         readiness_score=readiness_score,
         distribution_channels=channels[payload.audience],
         checklist=checklist,
-        reviewers=reviewers[payload.audience],
+        operators=operators[payload.audience],
         warnings=warnings,
         talking_points=talking_points,
     )

@@ -21,13 +21,13 @@ from .models import (
 USE_CASES = [
     UseCase(
         id="finance-close-copilot-sprint",
-        name="Finance Close Copilot Sprint",
+        name="Finance Close AI assistant Sprint",
         track="value-realization",
         audiences=["finance", "executive", "it"],
-        summary="Role-based Copilot adoption sprint for month-end close, variance commentary, and post-close follow-up.",
-        workflow="Copilot in Excel, Teams, and Outlook with manager review checkpoints and approved finance templates.",
+        summary="Role-based AI assistant adoption sprint for month-end close, variance commentary, and post-close follow-up.",
+        workflow="AI assistant in Excel, Teams, and Outlook with manager review checkpoints and approved finance templates.",
         stakeholders=["Finance Controller", "M365 Platform Lead", "Change Manager"],
-        owner="Copilot Adoption Office",
+        owner="AI assistant Adoption Office",
         rollout_wave="Wave 1: Korea, Singapore, United Kingdom",
         goals=[
             "Reduce meeting-to-summary turnaround during close week",
@@ -42,18 +42,18 @@ USE_CASES = [
         assets=[
             "finance_prompt_pack_v1",
             "quality_review_checklist",
-            "Power BI wave dashboard",
+            "adoption analytics wave dashboard",
         ],
         adoption_stage="pilot-ready",
     ),
     UseCase(
         id="legal-matter-prep-copilot-sprint",
-        name="Legal Matter Prep Copilot Sprint",
+        name="Legal Matter Prep AI assistant Sprint",
         track="change-readiness",
         audiences=["legal", "executive", "it"],
-        summary="Guided Copilot workflow for matter intake summaries, first-pass clause comparisons, and meeting recap drafting.",
-        workflow="Copilot in Word and Teams with clause library references, human approval, and escalation to legal reviewers.",
-        stakeholders=["General Counsel", "Compliance Lead", "Copilot Champion Lead"],
+        summary="Guided AI assistant workflow for matter intake summaries, first-pass clause comparisons, and meeting recap drafting.",
+        workflow="AI assistant in Word and Teams with clause library references, human approval, and escalation to legal operators.",
+        stakeholders=["General Counsel", "Compliance Lead", "AI assistant Champion Lead"],
         owner="Legal Enablement Lead",
         rollout_wave="Wave 1: United States and Germany",
         goals=[
@@ -78,8 +78,8 @@ USE_CASES = [
         name="Customer Service Resolution Drafting Sprint",
         track="training-and-champions",
         audiences=["customer-service", "champion", "it"],
-        summary="Champion-led Copilot rollout for summarizing case context, drafting response options, and coaching agents on tone.",
-        workflow="Copilot in Outlook and Teams with supervisor quality calibration, support macros, and multilingual guidance.",
+        summary="Champion-led AI assistant rollout for summarizing case context, drafting response options, and coaching agents on tone.",
+        workflow="AI assistant in Outlook and Teams with supervisor quality calibration, support macros, and multilingual guidance.",
         stakeholders=["Customer Service Director", "Helpdesk Lead", "Regional Champion Managers"],
         owner="Service Transformation Office",
         rollout_wave="Wave 2: Japan, Korea, Spain, Mexico",
@@ -91,7 +91,7 @@ USE_CASES = [
         guardrails=[
             "Agents must validate customer facts before send",
             "Escalation language stays aligned to regional compliance policies",
-            "Quality reviewers sample outputs weekly during rollout",
+            "Quality operators sample outputs weekly during rollout",
         ],
         assets=[
             "response_quality_rubric",
@@ -106,14 +106,14 @@ USE_CASES = [
         track="adoption-analytics",
         audiences=["executive", "champion", "it"],
         summary="Executive assistant and chief-of-staff workflow for meeting recap drafts, action tracking, and decision-log hygiene.",
-        workflow="Copilot in Teams, Word, and Loop with explicit ownership, parking lot notes, and follow-up deadlines.",
+        workflow="AI assistant in Teams, Word, and Loop with explicit ownership, parking lot notes, and follow-up deadlines.",
         stakeholders=["Chief of Staff", "Executive Sponsor", "Program Manager"],
         owner="Transformation PMO",
         rollout_wave="Wave 0: sponsor team and steering committee",
         goals=[
             "Improve decision velocity in steering forums",
             "Keep action owners and dates visible after each workshop",
-            "Model trustworthy Copilot behavior for downstream business teams",
+            "Model trustworthy AI assistant behavior for downstream business teams",
         ],
         guardrails=[
             "Decision notes are reviewed before broad distribution",
@@ -132,14 +132,14 @@ USE_CASES = [
 GUIDES = [
     Guide(
         id="guide-001",
-        title="Copilot Readiness Assessment Playbook",
+        title="AI assistant Readiness Assessment Playbook",
         audience="it",
         category="assessment",
-        summary="ADKAR-aligned readiness checklist for sponsors, IT, security, and business leads before Copilot scale-up.",
-        tags=["ADKAR", "Prosci", "readiness", "Copilot", "change"],
-        path="docs/copilot_readiness_assessment.md",
+        summary="ADKAR-aligned readiness checklist for sponsors, IT, security, and business leads before AI assistant scale-up.",
+        tags=["ADKAR", "Prosci", "readiness", "AI assistant", "change"],
+        path="docs/ai_assistant_readiness_assessment.md",
         excerpt="Score awareness, desire, knowledge, ability, and reinforcement by persona before approving a new wave.",
-        owner="Copilot Adoption Office",
+        owner="AI assistant Adoption Office",
         distribution=["steering packet", "project site", "wave gate review"],
         last_updated="2026-04-09",
     ),
@@ -164,7 +164,7 @@ GUIDES = [
         summary="Practical standard for approved prompt patterns, quality checks, and when to require human approval.",
         tags=["prompt", "quality", "human review", "safety", "governance"],
         path="docs/prompt_review_standard.md",
-        excerpt="Teach people when Copilot is a drafting accelerator and when it is only a starting point.",
+        excerpt="Teach people when AI assistant is a drafting accelerator and when it is only a starting point.",
         owner="Responsible AI Lead",
         distribution=["all-user portal", "training follow-up", "manager cascade"],
         last_updated="2026-04-09",
@@ -188,11 +188,11 @@ GUIDES = [
         audience="executive",
         category="analytics",
         summary="Definition set for adoption, quality, time saved, support, retention, and business value measures.",
-        tags=["KPI", "Power BI", "adoption", "analytics", "value"],
+        tags=["KPI", "adoption analytics", "adoption", "analytics", "value"],
         path="docs/value_realization_kpi_dictionary.md",
         excerpt="License activation is not enough; value requires repeat use, quality lift, and business-owner validation.",
         owner="Adoption Analytics Lead",
-        distribution=["Power BI view", "exec readout", "weekly operating review"],
+        distribution=["adoption analytics view", "exec readout", "weekly operating review"],
         last_updated="2026-04-09",
     ),
     Guide(
@@ -205,46 +205,46 @@ GUIDES = [
         path="docs/facilitation_toolkit.md",
         excerpt="Convert fear, safety, and quality objections into time-boxed experiments with owners and dates.",
         owner="Program Facilitator",
-        distribution=["steering meetings", "working sessions", "interview appendix"],
+        distribution=["steering meetings", "working sessions", "walkthrough appendix"],
         last_updated="2026-04-09",
     ),
     Guide(
         id="guide-007",
-        title="JD Alignment Matrix",
+        title="Requirement Alignment Matrix",
         audience="executive",
-        category="interview",
-        summary="Bullet-by-bullet mapping of the Microsoft job description to concrete project evidence and honest proof boundaries.",
-        tags=["JD", "alignment", "evidence", "interview", "Microsoft"],
-        path="docs/jd_alignment_matrix.md",
+        category="walkthrough",
+        summary="Bullet-by-bullet mapping of the enterprise adoption requirements to concrete project evidence and honest proof boundaries.",
+        tags=["requirements", "alignment", "evidence", "walkthrough", "enterprise platform"],
+        path="docs/requirement_alignment_matrix.md",
         excerpt="Every required and preferred qualification is mapped to a project artifact, with explicit notes on what the project can and cannot prove.",
-        owner="Candidate Portfolio",
-        distribution=["interview packet", "portfolio appendix", "self-review"],
+        owner="Systems Gallery",
+        distribution=["walkthrough packet", "portfolio appendix", "self-review"],
         last_updated="2026-04-09",
     ),
     Guide(
         id="guide-008",
         title="English Demo Script",
         audience="executive",
-        category="interview",
-        summary="Tight 7-minute English walkthrough for the second-round Microsoft interview.",
-        tags=["demo", "English", "interview", "script", "walkthrough"],
-        path="docs/demo_script_english.md",
-        excerpt="Open with the business problem, show the role-fit board, run the planner, and close with the value and support model.",
-        owner="Candidate Portfolio",
-        distribution=["interview rehearsal", "self-review"],
+        category="walkthrough",
+        summary="Tight 7-minute English system walkthrough for the adoption surface.",
+        tags=["demo", "English", "walkthrough", "script", "walkthrough"],
+        path="docs/system_walkthrough_english.md",
+        excerpt="Open with the business problem, show the capability-fit board, run the planner, and close with the value and support model.",
+        owner="Systems Gallery",
+        distribution=["walkthrough rehearsal", "self-review"],
         last_updated="2026-04-09",
     ),
     Guide(
         id="guide-009",
         title="STAR Story Bank",
         audience="executive",
-        category="interview",
+        category="walkthrough",
         summary="English STAR-style answers for consulting, facilitation, adoption, stakeholder alignment, and objection handling.",
-        tags=["STAR", "behavioral", "English", "interview", "stakeholders"],
-        path="docs/star_story_bank.md",
+        tags=["STAR", "behavioral", "English", "walkthrough", "stakeholders"],
+        path="docs/operating_story_bank.md",
         excerpt="Use concise stories that show structure, ownership, and measurable outcomes without overstating experience.",
-        owner="Candidate Portfolio",
-        distribution=["interview rehearsal", "self-review"],
+        owner="Systems Gallery",
+        distribution=["walkthrough rehearsal", "self-review"],
         last_updated="2026-04-09",
     ),
     Guide(
@@ -252,12 +252,12 @@ GUIDES = [
         title="30-60-90 Day Plan",
         audience="executive",
         category="strategy",
-        summary="How I would onboard into the role and create momentum in the first three months.",
-        tags=["30-60-90", "onboarding", "strategy", "Copilot", "consulting"],
-        path="docs/thirty_sixty_ninety_plan.md",
+        summary="Three-month operating plan for creating rollout momentum.",
+        tags=["30-60-90", "onboarding", "strategy", "AI assistant", "consulting"],
+        path="docs/rollout_plan.md",
         excerpt="The plan starts with listening and discovery, then moves into pilot shaping, adoption instrumentation, and scale decisions.",
-        owner="Candidate Portfolio",
-        distribution=["interview packet", "follow-up email"],
+        owner="Systems Gallery",
+        distribution=["walkthrough packet", "follow-up email"],
         last_updated="2026-04-09",
     ),
 ]
@@ -302,10 +302,10 @@ PROGRAM_SIGNALS = [
 
 TRAINING_SESSIONS = [
     TrainingSession(
-        title="Executive Sponsor Copilot Briefing",
+        title="Executive Sponsor AI assistant Briefing",
         audience="executive",
         format="30-minute decision briefing",
-        owner="Copilot Adoption Office",
+        owner="AI assistant Adoption Office",
         outcome="Align sponsors on scope, guardrails, success metrics, and the scale decision cadence.",
     ),
     TrainingSession(
@@ -334,7 +334,7 @@ TRAINING_SESSIONS = [
         audience="it",
         format="recorded briefing plus FAQ pack",
         owner="Communications Lead",
-        outcome="Give frontline managers a repeatable story for why Copilot is changing, how to use it, and how to escalate.",
+        outcome="Give frontline managers a repeatable story for why AI assistant is changing, how to use it, and how to escalate.",
     ),
 ]
 
@@ -393,7 +393,7 @@ DELIVERY_METRICS = [
         detail="Champion staffing, office hours, and escalation design assume large-enterprise scale.",
     ),
     DeliveryMetric(
-        label="Power BI cadence",
+        label="adoption analytics cadence",
         value="Daily refresh",
         detail="The KPI dictionary and dashboard narrative assume daily adoption and value readouts for sponsors.",
     ),
@@ -480,7 +480,7 @@ POWER_BI_VIEWS = [
 
 SUPPORT_CHANNELS = [
     SupportChannel(
-        name="Copilot in-product guidance",
+        name="AI assistant in-product guidance",
         tier="tier-0",
         owner="M365 Platform Lead",
         sla="Immediate self-serve",
@@ -546,9 +546,9 @@ FEEDBACK_THEMES = [
 
 ROLE_FIT_CARDS = [
     RoleFitCard(
-        requirement="Copilot AI usage readiness assessments and action plans",
+        requirement="AI assistant usage readiness assessments and action plans",
         proof="The project includes an ADKAR-aligned readiness playbook, wave gates, persona-based scoring, and next-step recommendations.",
-        artifacts=["docs/copilot_readiness_assessment.md", "/api/overview", "/api/assistant/plan"],
+        artifacts=["docs/ai_assistant_readiness_assessment.md", "/api/overview", "/api/assistant/plan"],
     ),
     RoleFitCard(
         requirement="Training development and champion enablement at enterprise scale",
@@ -556,7 +556,7 @@ ROLE_FIT_CARDS = [
         artifacts=["docs/champion_launch_kit.md", "src/App.tsx", "/api/overview"],
     ),
     RoleFitCard(
-        requirement="Adoption analytics, KPI interpretation, and Power BI-style value views",
+        requirement="Adoption analytics, KPI interpretation, and analytics-style value views",
         proof="Adoption metrics, program signals, and the KPI dictionary show how to move from seat counts to measurable business impact.",
         artifacts=["docs/value_realization_kpi_dictionary.md", "/api/overview", "src/App.tsx"],
     ),
@@ -568,7 +568,7 @@ ROLE_FIT_CARDS = [
     RoleFitCard(
         requirement="Deep enablement for finance, legal, and customer service personas",
         proof="The scenario portfolio explicitly separates finance, legal, customer service, and executive workflows so each persona has its own value case and guardrails.",
-        artifacts=["/api/use-cases", "src/App.tsx", "docs/copilot_business_case_playbook.md"],
+        artifacts=["/api/use-cases", "src/App.tsx", "docs/ai_assistant_business_case_playbook.md"],
     ),
     RoleFitCard(
         requirement="Multi-geo, multilingual rollout and internal communications",
@@ -583,7 +583,7 @@ ROLE_FIT_CARDS = [
     RoleFitCard(
         requirement="Cross-functional change leadership across business, IT, and executives",
         proof="Every use case explicitly maps business owners, IT owners, governance checks, support channels, and sponsor readouts.",
-        artifacts=["/api/overview", "docs/role_fit.md", "docs/interview_storyline.md"],
+        artifacts=["/api/overview", "docs/capability_fit.md", "docs/walkthrough_storyline.md"],
     ),
 ]
 
@@ -602,7 +602,7 @@ FACILITATION_ITEMS = [
         owner="M365 Platform Lead",
         due_date="2026-04-22",
         status="parked for architecture review",
-        note="Keep the first 90 days focused on standard Copilot workflows before adjacent tooling debates.",
+        note="Keep the first 90 days focused on standard AI assistant workflows before adjacent tooling debates.",
     ),
     FacilitationItem(
         title="Steering committee timer",
@@ -624,7 +624,7 @@ FACILITATION_ITEMS = [
 
 OBJECTION_LOG = [
     Experiment(
-        concern="AI fear: teams think Copilot will replace judgment rather than accelerate drafting.",
+        concern="AI fear: teams think AI assistant will replace judgment rather than accelerate drafting.",
         hypothesis="If we teach draft-versus-decision boundaries and show manager-reviewed examples, repeat use will rise without trust erosion.",
         owner="Change Enablement Lead",
         target_date="2026-04-24",
@@ -647,8 +647,8 @@ OBJECTION_LOG = [
 ]
 
 SAMPLE_REQUESTS = [
-    "We need an English-language briefing for a global Copilot rollout in finance and legal, including readiness, training, and value KPIs.",
+    "We need an English-language briefing for a global AI assistant rollout in finance and legal, including readiness, training, and value KPIs.",
     "Customer service leaders are worried about quality and multilingual consistency. Build a champion-led experiment plan with owners and dates.",
-    "Our executive sponsor wants a 30-day business case for Microsoft 365 Copilot with decision logs, support model, and Power BI adoption views.",
+    "Our executive sponsor wants a 30-day business case for Enterprise AI Assistant with decision logs, support model, and adoption analytics adoption views.",
     "A regional IT lead wants to know if the next wave is ready for launch and what objections must be converted into experiments first.",
 ]

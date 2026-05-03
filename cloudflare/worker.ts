@@ -243,13 +243,13 @@ function retrieveCitations(requestText: string) {
 function prioritizedUseCases(primary: (typeof overview.use_cases)[number]): string[] {
   const related: string[] = [primary.name];
   if (primary.id.includes('finance')) {
-    related.push('Executive Briefing and Decision Recap Sprint', 'Legal Matter Prep Copilot Sprint');
+    related.push('Executive Briefing and Decision Recap Sprint', 'Legal Matter Prep AI assistant Sprint');
   } else if (primary.id.includes('legal')) {
-    related.push('Executive Briefing and Decision Recap Sprint', 'Finance Close Copilot Sprint');
+    related.push('Executive Briefing and Decision Recap Sprint', 'Finance Close AI assistant Sprint');
   } else if (primary.id.includes('customer-service')) {
     related.push('Champion Community Launch Kit', 'Executive Briefing and Decision Recap Sprint');
   } else {
-    related.push('Finance Close Copilot Sprint', 'Customer Service Resolution Drafting Sprint');
+    related.push('Finance Close AI assistant Sprint', 'Customer Service Resolution Drafting Sprint');
   }
   return related;
 }
@@ -351,7 +351,7 @@ function buildPlan(payload: { request: string; audience: string }) {
     readiness_actions: readinessActions,
     training_actions: trainingActions,
     communications_actions: [
-      'Prepare a manager cascade with simple language on why Copilot is changing, what is in scope, and how to get help.',
+      'Prepare a manager cascade with simple language on why AI assistant is changing, what is in scope, and how to get help.',
       'Localize launch communications, FAQs, and examples for each geo before expanding the wave.',
       'Publish a short internal communications pack that reinforces safe-use boundaries and success stories.',
     ],
@@ -371,13 +371,13 @@ function buildPlan(payload: { request: string; audience: string }) {
       'Escalate unresolved objections as experiments, not debates, so momentum stays visible.',
     ],
     value_actions: [
-      'Track weekly active use, repeat use, quality approval, and support reopen rate in a Power BI-style sponsor view.',
+      'Track weekly active use, repeat use, quality approval, and support reopen rate in a analytics-style sponsor view.',
       'Run a 30-day value readout comparing baseline time, post-training behavior, and business-owner validation.',
       'Decide whether to scale, refine, or stop the wave based on KPI thresholds rather than enthusiasm alone.',
     ],
     risks: [
       'Do not scale based on seat activation alone; require repeat usage and manager-validated quality signals.',
-      'Keep Copilot positioned as a drafting accelerator, not an autonomous decision-maker, especially in regulated workflows.',
+      'Keep AI assistant positioned as a drafting accelerator, not an autonomous decision-maker, especially in regulated workflows.',
       'If the support model is unclear, adoption will stall even when training attendance looks strong.',
       ...(persona === 'legal' ? ['Legal pilots fail quickly when people confuse clause comparison support with final legal judgment.'] : []),
       ...(persona === 'customer-service'
@@ -428,14 +428,14 @@ function previewRolloutPacket(payload: { title: string; audience: Audience; body
     champion: ['champion community hub', 'monthly digest', 'Q&A channel'],
     all: ['project site', 'manager cascade', 'FAQ page'],
   };
-  const reviewers: Record<string, string[]> = {
+  const operators: Record<string, string[]> = {
     executive: ['Executive Sponsor', 'Change Lead', 'Adoption Analytics Lead'],
-    it: ['M365 Platform Lead', 'Security Reviewer', 'Change Lead'],
+    it: ['M365 Platform Lead', 'Security Operator', 'Change Lead'],
     finance: ['Finance Controller', 'Change Lead', 'Champion Manager'],
     legal: ['General Counsel Delegate', 'Compliance Lead', 'Change Lead'],
     'customer-service': ['Service Director', 'Regional Champion Manager', 'Helpdesk Lead'],
     champion: ['Champion Community Manager', 'Change Lead', 'Helpdesk Lead'],
-    all: ['Change Lead', 'Security Reviewer', 'Communications Lead'],
+    all: ['Change Lead', 'Security Operator', 'Communications Lead'],
   };
 
   return {
@@ -451,9 +451,9 @@ function previewRolloutPacket(payload: { title: string; audience: Audience; body
       'Include a baseline, target KPI, and review cadence.',
       'Describe the support path and champion model.',
       'Specify the rollout wave, geo scope, and language plan.',
-      'Call out what Copilot can do, cannot do, and when human review is required.',
+      'Call out what AI assistant can do, cannot do, and when human review is required.',
     ],
-    reviewers: reviewers[payload.audience] ?? reviewers.all,
+    operators: operators[payload.audience] ?? operators.all,
     warnings,
     talking_points: [
       'What pain point are we removing for this persona in the next 30 days?',
@@ -551,20 +551,20 @@ async function handleApi(request: Request, url: URL): Promise<Response | null> {
   if (pathname === '/api/facilitation' && method === 'GET') {
     return jsonResponse({ items: overview.facilitation_items, objections: overview.objection_log });
   }
-  if (pathname === '/api/role-fit' && method === 'GET') {
+  if ((pathname === '/api/capability-fit' || pathname === '/api/role-fit') && method === 'GET') {
     return jsonResponse({ items: overview.role_fit });
   }
-  if (pathname === '/api/interview/brief' && method === 'GET') {
+  if ((pathname === '/api/walkthrough/brief' || pathname === '/api/interview/brief') && method === 'GET') {
     return jsonResponse({
-      headline: 'Portfolio-safe Microsoft 365 Copilot adoption simulation for readiness, change, analytics, and value realization.',
+      headline: 'Public-safe Enterprise AI Assistant adoption simulation for readiness, change, analytics, and value realization.',
       proof_points: [
-        'Persona-based Copilot use case portfolio',
+        'Persona-based AI assistant use case portfolio',
         'ADKAR-aligned readiness and training assets',
-        'Power BI-style adoption and value metric framing',
+        'analytics-style adoption and value metric framing',
         'Executive facilitation toolkit with decision log and parking lot',
         'Deterministic planner that turns objections into experiments',
       ],
-      interview_hooks: [
+      walkthrough_hooks: [
         'how to prioritize use cases instead of rolling out generic AI',
         'how to measure value beyond license activation',
         'how to handle quality, fear, and safety objections in workshops',
@@ -608,7 +608,7 @@ async function handleApi(request: Request, url: URL): Promise<Response | null> {
         .map((item) => ({ type: 'guide', id: item.id, title: item.title, summary: item.summary, path: item.path })),
       ...overview.role_fit
         .filter((item) => matchesQuery([item.requirement, item.proof, item.artifacts.join(' ')], q))
-        .map((item, index) => ({ type: 'role-fit', id: `role-fit-${index + 1}`, title: item.requirement, summary: item.proof, path: 'docs/role_fit.md' })),
+        .map((item, index) => ({ type: 'capability-fit', id: `capability-fit-${index + 1}`, title: item.requirement, summary: item.proof, path: 'docs/capability_fit.md' })),
       ...overview.facilitation_items
         .filter((item) => matchesQuery([item.title, item.note, item.owner, item.status], q))
         .map((item, index) => ({ type: 'facilitation', id: `facilitation-${index + 1}`, title: item.title, summary: item.note, path: '/api/facilitation' })),

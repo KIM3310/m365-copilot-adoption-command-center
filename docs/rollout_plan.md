@@ -3,7 +3,7 @@
 ## First 30 days
 
 - listen to current sponsors, business leads, IT owners, and adoption teams
-- review existing Copilot pilots, support data, and KPI definitions
+- review existing AI assistant pilots, support data, and KPI definitions
 - identify the highest-potential workflows by value, readiness, and sponsor energy
 - confirm where the current support and communications model is weak
 
@@ -23,4 +23,4 @@
 
 ## Guiding principle
 
-I would try to earn trust early by bringing structure, clarity, and momentum. My first goal would not be to launch as much as possible. My first goal would be to make sure the right launch has the right operating model behind it.
+The first phase earns trust by bringing structure, clarity, and momentum. The goal is not to launch as much as possible; it is to make sure the right launch has the right operating model behind it.

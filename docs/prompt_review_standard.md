@@ -2,7 +2,7 @@
 
 ## Why this exists
 
-Copilot adoption stalls when people hear either "AI can do everything" or "AI cannot be trusted at all." This standard creates a practical middle path: Copilot accelerates drafting, comparison, summarization, and recap work, but people still own judgment.
+AI assistant adoption stalls when people hear either "AI can do everything" or "AI cannot be trusted at all." This standard creates a practical middle path: AI assistant accelerates drafting, comparison, summarization, and recap work, but people still own judgment.
 
 ## Safe pattern
 
@@ -19,12 +19,12 @@ Copilot adoption stalls when people hear either "AI can do everything" or "AI ca
 | Meeting recap draft | Yes | Actions and owners must be confirmed |
 | Email draft to internal team | Yes | Tone and accuracy still matter |
 | Finance variance summary | Yes | Numeric interpretation needs review |
-| Legal clause comparison notes | Yes | Copilot supports analysis, not final legal judgment |
+| Legal clause comparison notes | Yes | AI assistant supports analysis, not final legal judgment |
 | FAQ rewrite for internal portal | Yes | Policy wording must stay aligned |
 
 ## Bad patterns
 
-- asking Copilot for final approval language
+- asking AI assistant for final approval language
 - skipping baseline templates in regulated workflows
 - using public or unapproved information sources
 - assuming translation quality is production-ready without review
@@ -41,4 +41,4 @@ Review every important output for:
 
 ## Coaching message
 
-"Use Copilot to produce a better first draft faster. Use your judgment to decide whether the draft is ready."
+"Use AI assistant to produce a better first draft faster. Use your judgment to decide whether the draft is ready."

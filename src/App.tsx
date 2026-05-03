@@ -55,7 +55,7 @@ function App() {
   const [error, setError] = useState<string | null>(null);
 
   const [requestText, setRequestText] = useState(
-    'Our executive sponsor wants a 30-day Microsoft 365 Copilot business case for finance and legal with readiness, champions, and value KPIs.',
+    'Our executive sponsor wants a 30-day Enterprise AI Assistant business case for finance and legal with readiness, champions, and value KPIs.',
   );
   const [audience, setAudience] = useState<Audience>('finance');
   const [plan, setPlan] = useState<PlanResponse | null>(null);
@@ -71,12 +71,12 @@ function App() {
   const [guideDetail, setGuideDetail] = useState<GuideDetail | null>(null);
   const [guideLoading, setGuideLoading] = useState(false);
 
-  const [packetTitle, setPacketTitle] = useState('Finance Copilot Wave 1 Packet');
+  const [packetTitle, setPacketTitle] = useState('Finance AI assistant Wave 1 Packet');
   const [packetAudience, setPacketAudience] = useState<Audience>('finance');
-  const [packetPurpose, setPacketPurpose] = useState('Prepare the executive review packet for a finance-focused Copilot wave.');
+  const [packetPurpose, setPacketPurpose] = useState('Prepare the executive review packet for a finance-focused AI assistant wave.');
   const [packetBody, setPacketBody] = useState(
     [
-      'Owner: Copilot Adoption Office',
+      'Owner: AI assistant Adoption Office',
       'Scope: Finance month-end close pilot',
       'Baseline: 52 minutes per recap package',
       'Business Case: Reduce close-week recap effort while keeping manager-approved quality',
@@ -296,13 +296,12 @@ function App() {
     <div className="page-shell">
       <header className="hero">
         <div className="hero-copy">
-          <span className="eyebrow">Portfolio-Safe Interview Project</span>
-          <h1>Microsoft 365 Copilot Adoption Command Center</h1>
+          <span className="eyebrow">Public-safe adoption system</span>
+          <h1>Enterprise AI Assistant Adoption Command Center</h1>
           <p className="hero-text">
-            This project is a synthetic enterprise program simulation built for the AI Adoption
-            Architect / Consultant role. It shows how I would assess readiness, prioritize Copilot
-            use cases, activate champions, measure value, and facilitate executive decisions with a
-            clear decision log.
+            Synthetic enterprise program simulation for readiness assessment, persona-based use case
+            prioritization, champion activation, value measurement, and executive decision hygiene
+            around a governed AI assistant rollout.
           </p>
 
           <div className="hero-actions">
@@ -364,8 +363,8 @@ function App() {
           <section className="section two-column">
             <div>
               <div className="section-heading">
-                <span className="eyebrow">Role Match</span>
-                <h2>Why this fits the Microsoft role</h2>
+                <span className="eyebrow">Operating Model</span>
+                <h2>Why this fits the adoption operating model</h2>
               </div>
               <div className="stack">
                 {overview.role_fit.map((item) => (
@@ -388,9 +387,9 @@ function App() {
               </div>
               <article className="card">
                 <ol className="flat-list numbered">
-                  <li>Review the role-fit cards and readiness score.</li>
+                  <li>Review the capability-fit cards and readiness score.</li>
                   <li>Open a persona use case and inspect the guardrails.</li>
-                  <li>Run the Copilot scenario planner with one business prompt.</li>
+                  <li>Run the AI assistant scenario planner with one business prompt.</li>
                   <li>Check the facilitation board and objection experiments.</li>
                   <li>Preview the rollout packet before executive review.</li>
                 </ol>
@@ -423,7 +422,7 @@ function App() {
           <section className="section">
             <div className="section-heading">
               <span className="eyebrow">Use Cases</span>
-              <h2>Persona-based Copilot portfolio</h2>
+              <h2>Persona-based AI assistant portfolio</h2>
             </div>
 
             <div className="toolbar">
@@ -758,7 +757,7 @@ function App() {
                       </table>
                     </div>
                     {snowflakeQuery.truncated && (
-                      <p className="muted top-gap">Results were truncated to keep the interview preview lightweight.</p>
+                      <p className="muted top-gap">Results were truncated to keep the walkthrough preview lightweight.</p>
                     )}
                   </article>
                 </div>
@@ -775,14 +774,14 @@ function App() {
             <div>
               <div className="section-heading">
                 <span className="eyebrow">Feedback</span>
-                <h2>Power BI views and theme backlog</h2>
+                <h2>adoption analytics views and theme backlog</h2>
               </div>
               <div className="stack">
                 {overview.power_bi_views.map((item) => (
                   <article className="card" key={item.name}>
                     <div className="card-topline">
                       <span className="mini-chip">{item.audience}</span>
-                      <span className="muted">Power BI view</span>
+                      <span className="muted">adoption analytics view</span>
                     </div>
                     <h3>{item.name}</h3>
                     <p>{item.purpose}</p>
@@ -856,11 +855,11 @@ function App() {
             <div>
               <div className="section-heading">
                 <span className="eyebrow">Planner</span>
-                <h2>Build a Copilot adoption plan</h2>
+                <h2>Build a AI assistant adoption plan</h2>
               </div>
               <form className="card form-card" onSubmit={handlePlan}>
                 <label className="field">
-                  <span>Interview scenario</span>
+                  <span>Walkthrough scenario</span>
                   <textarea value={requestText} onChange={(event) => setRequestText(event.target.value)} rows={7} />
                 </label>
                 <label className="field">
@@ -880,7 +879,7 @@ function App() {
                     </button>
                   ))}
                 </div>
-                <button type="submit">{planning ? 'Building...' : 'Build Copilot plan'}</button>
+                <button type="submit">{planning ? 'Building...' : 'Build AI assistant plan'}</button>
               </form>
             </div>
 
@@ -1113,7 +1112,7 @@ function App() {
                       <span className="muted">{packetPreview.readiness_score}/100</span>
                     </div>
                     <h3>{packetPreview.normalized_title}</h3>
-                    <p>Use this check before taking a Copilot wave packet into sponsor review.</p>
+                    <p>Use this check before taking a AI assistant wave packet into sponsor review.</p>
                   </article>
 
                   <article className="card">
@@ -1135,9 +1134,9 @@ function App() {
                   </article>
 
                   <article className="card">
-                    <h3>Reviewers</h3>
+                    <h3>Operators</h3>
                     <ul className="flat-list">
-                      {packetPreview.reviewers.map((item) => (
+                      {packetPreview.operators.map((item) => (
                         <li key={item}>{item}</li>
                       ))}
                     </ul>

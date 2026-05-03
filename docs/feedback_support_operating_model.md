@@ -2,7 +2,7 @@
 
 ## Objective
 
-Make Copilot adoption sustainable by defining how people get help, how feedback is captured, and how blockers are removed quickly.
+Make AI assistant adoption sustainable by defining how people get help, how feedback is captured, and how blockers are removed quickly.
 
 ## Tiered support
 
@@ -34,6 +34,6 @@ Make Copilot adoption sustainable by defining how people get help, how feedback 
 - repeated themes drive visible content updates
 - adoption and success teams remove blockers before trust drops
 
-## Interview line
+## Walkthrough line
 
 "I treat support as part of the adoption system, not a cleanup function after launch. If I cannot explain the feedback loop and blocker-removal rhythm, then the rollout is not ready to scale."

@@ -23,7 +23,7 @@ export const overview = {
       "detail": "Champion staffing, office hours, and escalation design assume large-enterprise scale."
     },
     {
-      "label": "Power BI cadence",
+      "label": "adoption analytics cadence",
       "value": "Daily refresh",
       "detail": "The KPI dictionary and dashboard narrative assume daily adoption and value readouts for sponsors."
     }
@@ -158,7 +158,7 @@ export const overview = {
   ],
   "support_channels": [
     {
-      "name": "Copilot in-product guidance",
+      "name": "AI assistant in-product guidance",
       "tier": "tier-0",
       "owner": "M365 Platform Lead",
       "sla": "Immediate self-serve",
@@ -235,10 +235,10 @@ export const overview = {
   ],
   "role_fit": [
     {
-      "requirement": "Copilot AI usage readiness assessments and action plans",
+      "requirement": "AI assistant usage readiness assessments and action plans",
       "proof": "The project includes an ADKAR-aligned readiness playbook, wave gates, persona-based scoring, and next-step recommendations.",
       "artifacts": [
-        "docs/copilot_readiness_assessment.md",
+        "docs/ai_assistant_readiness_assessment.md",
         "/api/overview",
         "/api/assistant/plan"
       ]
@@ -253,7 +253,7 @@ export const overview = {
       ]
     },
     {
-      "requirement": "Adoption analytics, KPI interpretation, and Power BI-style value views",
+      "requirement": "Adoption analytics, KPI interpretation, and analytics-style value views",
       "proof": "Adoption metrics, program signals, and the KPI dictionary show how to move from seat counts to measurable business impact.",
       "artifacts": [
         "docs/value_realization_kpi_dictionary.md",
@@ -276,7 +276,7 @@ export const overview = {
       "artifacts": [
         "/api/use-cases",
         "src/App.tsx",
-        "docs/copilot_business_case_playbook.md"
+        "docs/ai_assistant_business_case_playbook.md"
       ]
     },
     {
@@ -302,35 +302,35 @@ export const overview = {
       "proof": "Every use case explicitly maps business owners, IT owners, governance checks, support channels, and sponsor readouts.",
       "artifacts": [
         "/api/overview",
-        "docs/role_fit.md",
-        "docs/interview_storyline.md"
+        "docs/capability_fit.md",
+        "docs/walkthrough_storyline.md"
       ]
     }
   ],
   "sample_requests": [
-    "We need an English-language briefing for a global Copilot rollout in finance and legal, including readiness, training, and value KPIs.",
+    "We need an English-language briefing for a global AI assistant rollout in finance and legal, including readiness, training, and value KPIs.",
     "Customer service leaders are worried about quality and multilingual consistency. Build a champion-led experiment plan with owners and dates.",
-    "Our executive sponsor wants a 30-day business case for Microsoft 365 Copilot with decision logs, support model, and Power BI adoption views.",
+    "Our executive sponsor wants a 30-day business case for Enterprise AI Assistant with decision logs, support model, and adoption analytics adoption views.",
     "A regional IT lead wants to know if the next wave is ready for launch and what objections must be converted into experiments first."
   ],
   "use_cases": [
     {
       "id": "finance-close-copilot-sprint",
-      "name": "Finance Close Copilot Sprint",
+      "name": "Finance Close AI assistant Sprint",
       "track": "value-realization",
       "audiences": [
         "finance",
         "executive",
         "it"
       ],
-      "summary": "Role-based Copilot adoption sprint for month-end close, variance commentary, and post-close follow-up.",
-      "workflow": "Copilot in Excel, Teams, and Outlook with manager review checkpoints and approved finance templates.",
+      "summary": "Role-based AI assistant adoption sprint for month-end close, variance commentary, and post-close follow-up.",
+      "workflow": "AI assistant in Excel, Teams, and Outlook with manager review checkpoints and approved finance templates.",
       "stakeholders": [
         "Finance Controller",
         "M365 Platform Lead",
         "Change Manager"
       ],
-      "owner": "Copilot Adoption Office",
+      "owner": "AI assistant Adoption Office",
       "rollout_wave": "Wave 1: Korea, Singapore, United Kingdom",
       "goals": [
         "Reduce meeting-to-summary turnaround during close week",
@@ -345,25 +345,25 @@ export const overview = {
       "assets": [
         "finance_prompt_pack_v1",
         "quality_review_checklist",
-        "Power BI wave dashboard"
+        "adoption analytics wave dashboard"
       ],
       "adoption_stage": "pilot-ready"
     },
     {
       "id": "legal-matter-prep-copilot-sprint",
-      "name": "Legal Matter Prep Copilot Sprint",
+      "name": "Legal Matter Prep AI assistant Sprint",
       "track": "change-readiness",
       "audiences": [
         "legal",
         "executive",
         "it"
       ],
-      "summary": "Guided Copilot workflow for matter intake summaries, first-pass clause comparisons, and meeting recap drafting.",
-      "workflow": "Copilot in Word and Teams with clause library references, human approval, and escalation to legal reviewers.",
+      "summary": "Guided AI assistant workflow for matter intake summaries, first-pass clause comparisons, and meeting recap drafting.",
+      "workflow": "AI assistant in Word and Teams with clause library references, human approval, and escalation to legal operators.",
       "stakeholders": [
         "General Counsel",
         "Compliance Lead",
-        "Copilot Champion Lead"
+        "AI assistant Champion Lead"
       ],
       "owner": "Legal Enablement Lead",
       "rollout_wave": "Wave 1: United States and Germany",
@@ -393,8 +393,8 @@ export const overview = {
         "champion",
         "it"
       ],
-      "summary": "Champion-led Copilot rollout for summarizing case context, drafting response options, and coaching agents on tone.",
-      "workflow": "Copilot in Outlook and Teams with supervisor quality calibration, support macros, and multilingual guidance.",
+      "summary": "Champion-led AI assistant rollout for summarizing case context, drafting response options, and coaching agents on tone.",
+      "workflow": "AI assistant in Outlook and Teams with supervisor quality calibration, support macros, and multilingual guidance.",
       "stakeholders": [
         "Customer Service Director",
         "Helpdesk Lead",
@@ -410,7 +410,7 @@ export const overview = {
       "guardrails": [
         "Agents must validate customer facts before send",
         "Escalation language stays aligned to regional compliance policies",
-        "Quality reviewers sample outputs weekly during rollout"
+        "Quality operators sample outputs weekly during rollout"
       ],
       "assets": [
         "response_quality_rubric",
@@ -429,7 +429,7 @@ export const overview = {
         "it"
       ],
       "summary": "Executive assistant and chief-of-staff workflow for meeting recap drafts, action tracking, and decision-log hygiene.",
-      "workflow": "Copilot in Teams, Word, and Loop with explicit ownership, parking lot notes, and follow-up deadlines.",
+      "workflow": "AI assistant in Teams, Word, and Loop with explicit ownership, parking lot notes, and follow-up deadlines.",
       "stakeholders": [
         "Chief of Staff",
         "Executive Sponsor",
@@ -440,7 +440,7 @@ export const overview = {
       "goals": [
         "Improve decision velocity in steering forums",
         "Keep action owners and dates visible after each workshop",
-        "Model trustworthy Copilot behavior for downstream business teams"
+        "Model trustworthy AI assistant behavior for downstream business teams"
       ],
       "guardrails": [
         "Decision notes are reviewed before broad distribution",
@@ -458,20 +458,20 @@ export const overview = {
   "guides": [
     {
       "id": "guide-001",
-      "title": "Copilot Readiness Assessment Playbook",
+      "title": "AI assistant Readiness Assessment Playbook",
       "audience": "it",
       "category": "assessment",
-      "summary": "ADKAR-aligned readiness checklist for sponsors, IT, security, and business leads before Copilot scale-up.",
+      "summary": "ADKAR-aligned readiness checklist for sponsors, IT, security, and business leads before AI assistant scale-up.",
       "tags": [
         "ADKAR",
         "Prosci",
         "readiness",
-        "Copilot",
+        "AI assistant",
         "change"
       ],
-      "path": "docs/copilot_readiness_assessment.md",
+      "path": "docs/ai_assistant_readiness_assessment.md",
       "excerpt": "Score awareness, desire, knowledge, ability, and reinforcement by persona before approving a new wave.",
-      "owner": "Copilot Adoption Office",
+      "owner": "AI assistant Adoption Office",
       "distribution": [
         "steering packet",
         "project site",
@@ -516,7 +516,7 @@ export const overview = {
         "governance"
       ],
       "path": "docs/prompt_review_standard.md",
-      "excerpt": "Teach people when Copilot is a drafting accelerator and when it is only a starting point.",
+      "excerpt": "Teach people when AI assistant is a drafting accelerator and when it is only a starting point.",
       "owner": "Responsible AI Lead",
       "distribution": [
         "all-user portal",
@@ -556,7 +556,7 @@ export const overview = {
       "summary": "Definition set for adoption, quality, time saved, support, retention, and business value measures.",
       "tags": [
         "KPI",
-        "Power BI",
+        "adoption analytics",
         "adoption",
         "analytics",
         "value"
@@ -565,7 +565,7 @@ export const overview = {
       "excerpt": "License activation is not enough; value requires repeat use, quality lift, and business-owner validation.",
       "owner": "Adoption Analytics Lead",
       "distribution": [
-        "Power BI view",
+        "adoption analytics view",
         "exec readout",
         "weekly operating review"
       ],
@@ -590,28 +590,28 @@ export const overview = {
       "distribution": [
         "steering meetings",
         "working sessions",
-        "interview appendix"
+        "walkthrough appendix"
       ],
       "last_updated": "2026-04-09"
     },
     {
       "id": "guide-007",
-      "title": "JD Alignment Matrix",
+      "title": "Requirement Alignment Matrix",
       "audience": "executive",
-      "category": "interview",
-      "summary": "Bullet-by-bullet mapping of the Microsoft job description to concrete project evidence and honest proof boundaries.",
+      "category": "walkthrough",
+      "summary": "Bullet-by-bullet mapping of the enterprise adoption requirements to concrete project evidence and honest proof boundaries.",
       "tags": [
-        "JD",
+        "requirements",
         "alignment",
         "evidence",
-        "interview",
-        "Microsoft"
+        "walkthrough",
+        "enterprise platform"
       ],
-      "path": "docs/jd_alignment_matrix.md",
+      "path": "docs/requirement_alignment_matrix.md",
       "excerpt": "Every required and preferred qualification is mapped to a project artifact, with explicit notes on what the project can and cannot prove.",
-      "owner": "Candidate Portfolio",
+      "owner": "Systems Gallery",
       "distribution": [
-        "interview packet",
+        "walkthrough packet",
         "portfolio appendix",
         "self-review"
       ],
@@ -621,20 +621,20 @@ export const overview = {
       "id": "guide-008",
       "title": "English Demo Script",
       "audience": "executive",
-      "category": "interview",
-      "summary": "Tight 7-minute English walkthrough for the second-round Microsoft interview.",
+      "category": "walkthrough",
+      "summary": "Tight 7-minute English system walkthrough for the adoption surface.",
       "tags": [
         "demo",
         "English",
-        "interview",
+        "walkthrough",
         "script",
         "walkthrough"
       ],
-      "path": "docs/demo_script_english.md",
-      "excerpt": "Open with the business problem, show the role-fit board, run the planner, and close with the value and support model.",
-      "owner": "Candidate Portfolio",
+      "path": "docs/system_walkthrough_english.md",
+      "excerpt": "Open with the business problem, show the capability-fit board, run the planner, and close with the value and support model.",
+      "owner": "Systems Gallery",
       "distribution": [
-        "interview rehearsal",
+        "walkthrough rehearsal",
         "self-review"
       ],
       "last_updated": "2026-04-09"
@@ -643,20 +643,20 @@ export const overview = {
       "id": "guide-009",
       "title": "STAR Story Bank",
       "audience": "executive",
-      "category": "interview",
+      "category": "walkthrough",
       "summary": "English STAR-style answers for consulting, facilitation, adoption, stakeholder alignment, and objection handling.",
       "tags": [
         "STAR",
         "behavioral",
         "English",
-        "interview",
+        "walkthrough",
         "stakeholders"
       ],
-      "path": "docs/star_story_bank.md",
+      "path": "docs/operating_story_bank.md",
       "excerpt": "Use concise stories that show structure, ownership, and measurable outcomes without overstating experience.",
-      "owner": "Candidate Portfolio",
+      "owner": "Systems Gallery",
       "distribution": [
-        "interview rehearsal",
+        "walkthrough rehearsal",
         "self-review"
       ],
       "last_updated": "2026-04-09"
@@ -666,19 +666,19 @@ export const overview = {
       "title": "30-60-90 Day Plan",
       "audience": "executive",
       "category": "strategy",
-      "summary": "How I would onboard into the role and create momentum in the first three months.",
+      "summary": "Three-month operating plan for creating rollout momentum.",
       "tags": [
         "30-60-90",
         "onboarding",
         "strategy",
-        "Copilot",
+        "AI assistant",
         "consulting"
       ],
-      "path": "docs/thirty_sixty_ninety_plan.md",
+      "path": "docs/rollout_plan.md",
       "excerpt": "The plan starts with listening and discovery, then moves into pilot shaping, adoption instrumentation, and scale decisions.",
-      "owner": "Candidate Portfolio",
+      "owner": "Systems Gallery",
       "distribution": [
-        "interview packet",
+        "walkthrough packet",
         "follow-up email"
       ],
       "last_updated": "2026-04-09"
@@ -723,10 +723,10 @@ export const overview = {
   ],
   "training_sessions": [
     {
-      "title": "Executive Sponsor Copilot Briefing",
+      "title": "Executive Sponsor AI assistant Briefing",
       "audience": "executive",
       "format": "30-minute decision briefing",
-      "owner": "Copilot Adoption Office",
+      "owner": "AI assistant Adoption Office",
       "outcome": "Align sponsors on scope, guardrails, success metrics, and the scale decision cadence."
     },
     {
@@ -755,7 +755,7 @@ export const overview = {
       "audience": "it",
       "format": "recorded briefing plus FAQ pack",
       "owner": "Communications Lead",
-      "outcome": "Give frontline managers a repeatable story for why Copilot is changing, how to use it, and how to escalate."
+      "outcome": "Give frontline managers a repeatable story for why AI assistant is changing, how to use it, and how to escalate."
     }
   ],
   "facilitation_items": [
@@ -773,7 +773,7 @@ export const overview = {
       "owner": "M365 Platform Lead",
       "due_date": "2026-04-22",
       "status": "parked for architecture review",
-      "note": "Keep the first 90 days focused on standard Copilot workflows before adjacent tooling debates."
+      "note": "Keep the first 90 days focused on standard AI assistant workflows before adjacent tooling debates."
     },
     {
       "title": "Steering committee timer",
@@ -794,7 +794,7 @@ export const overview = {
   ],
   "objection_log": [
     {
-      "concern": "AI fear: teams think Copilot will replace judgment rather than accelerate drafting.",
+      "concern": "AI fear: teams think AI assistant will replace judgment rather than accelerate drafting.",
       "hypothesis": "If we teach draft-versus-decision boundaries and show manager-reviewed examples, repeat use will rise without trust erosion.",
       "owner": "Change Enablement Lead",
       "target_date": "2026-04-24",
@@ -820,20 +820,20 @@ export const guideDetails = {
   "guide-001": {
     "guide": {
       "id": "guide-001",
-      "title": "Copilot Readiness Assessment Playbook",
+      "title": "AI assistant Readiness Assessment Playbook",
       "audience": "it",
       "category": "assessment",
-      "summary": "ADKAR-aligned readiness checklist for sponsors, IT, security, and business leads before Copilot scale-up.",
+      "summary": "ADKAR-aligned readiness checklist for sponsors, IT, security, and business leads before AI assistant scale-up.",
       "tags": [
         "ADKAR",
         "Prosci",
         "readiness",
-        "Copilot",
+        "AI assistant",
         "change"
       ],
-      "path": "docs/copilot_readiness_assessment.md",
+      "path": "docs/ai_assistant_readiness_assessment.md",
       "excerpt": "Score awareness, desire, knowledge, ability, and reinforcement by persona before approving a new wave.",
-      "owner": "Copilot Adoption Office",
+      "owner": "AI assistant Adoption Office",
       "distribution": [
         "steering packet",
         "project site",
@@ -841,7 +841,7 @@ export const guideDetails = {
       ],
       "last_updated": "2026-04-09"
     },
-    "body": "# Copilot Readiness Assessment Playbook\n\n## Purpose\n\nUse this playbook before expanding Microsoft 365 Copilot beyond a small pilot. The goal is to prove that the next wave is ready across sponsorship, management, practitioners, governance, and support.\n\n## Assessment lens\n\nThis project uses a practical ADKAR view:\n\n- **Awareness**: Do sponsors and managers understand why Copilot is changing the workflow?\n- **Desire**: Do leaders and end users believe the new behavior is worth the effort?\n- **Knowledge**: Do people know when to use Copilot, how to prompt, and when to escalate?\n- **Ability**: Can they complete a real task with the approved prompt pack and review flow?\n- **Reinforcement**: Are value signals, coaching, and manager follow-up in place?\n\n## Inputs\n\n- sponsor goal statement\n- baseline workflow timing\n- target persona definition\n- approved data boundaries\n- support and escalation path\n- champion coverage by geography and language\n\n## Readiness scorecard\n\n| Area | Green means | Yellow means | Red means |\n| --- | --- | --- | --- |\n| Sponsor alignment | One business problem, one success metric, one decision cadence | Sponsor is supportive but vague on value case | Sponsor wants rollout without a real business problem |\n| Manager readiness | Managers can coach on acceptable use and review boundaries | Managers attended awareness training only | Managers treat Copilot as optional noise |\n| Practitioner readiness | Users can complete one guided scenario end to end | Users have awareness but no role-based practice | Users only heard the launch message |\n| Governance clarity | Approved sources and review gates are explicit | Some ambiguity remains on safe and unsafe patterns | Users cannot tell what is safe |\n| Support model | Champions and helpdesk roles are defined | Support route exists but ownership is fuzzy | No visible support path |\n| Measurement | Baseline and post-launch KPI definitions are ready | Basic telemetry exists but no value view | Only seat counts are available |\n\n## Recommended wave gate\n\nApprove the next wave only when:\n\n- the sponsor agrees to one business outcome,\n- baseline measures exist,\n- the role-based training path is scheduled,\n- the support model is visible,\n- the first objection experiments have owners and dates,\n- executive review materials are ready.\n\n## Common blockers\n\n- Leaders ask for enterprise rollout before validating one workflow.\n- Managers do not know how to coach on quality.\n- Champions exist in name only without a backlog or escalation route.\n- Teams confuse excitement with value.\n\n## What I would say in the interview\n\n\"I would not start by asking how many licenses were assigned. I would start by checking whether the target persona has a real workflow problem, whether managers can coach on the right behavior, and whether we have baseline metrics that let us defend the business case after 30 days.\"\n"
+    "body": "# AI assistant Readiness Assessment Playbook\n\n## Purpose\n\nUse this playbook before expanding Enterprise AI Assistant beyond a small pilot. The goal is to prove that the next wave is ready across sponsorship, management, practitioners, governance, and support.\n\n## Assessment lens\n\nThis project uses a practical ADKAR view:\n\n- **Awareness**: Do sponsors and managers understand why AI assistant is changing the workflow?\n- **Desire**: Do leaders and end users believe the new behavior is worth the effort?\n- **Knowledge**: Do people know when to use AI assistant, how to prompt, and when to escalate?\n- **Ability**: Can they complete a real task with the approved prompt pack and review flow?\n- **Reinforcement**: Are value signals, coaching, and manager follow-up in place?\n\n## Inputs\n\n- sponsor goal statement\n- baseline workflow timing\n- target persona definition\n- approved data boundaries\n- support and escalation path\n- champion coverage by geography and language\n\n## Readiness scorecard\n\n| Area | Green means | Yellow means | Red means |\n| --- | --- | --- | --- |\n| Sponsor alignment | One business problem, one success metric, one decision cadence | Sponsor is supportive but vague on value case | Sponsor wants rollout without a real business problem |\n| Manager readiness | Managers can coach on acceptable use and review boundaries | Managers attended awareness training only | Managers treat AI assistant as optional noise |\n| Practitioner readiness | Users can complete one guided scenario end to end | Users have awareness but no role-based practice | Users only heard the launch message |\n| Governance clarity | Approved sources and review gates are explicit | Some ambiguity remains on safe and unsafe patterns | Users cannot tell what is safe |\n| Support model | Champions and helpdesk roles are defined | Support route exists but ownership is fuzzy | No visible support path |\n| Measurement | Baseline and post-launch KPI definitions are ready | Basic telemetry exists but no value view | Only seat counts are available |\n\n## Recommended wave gate\n\nApprove the next wave only when:\n\n- the sponsor agrees to one business outcome,\n- baseline measures exist,\n- the role-based training path is scheduled,\n- the support model is visible,\n- the first objection experiments have owners and dates,\n- executive review materials are ready.\n\n## Common blockers\n\n- Leaders ask for enterprise rollout before validating one workflow.\n- Managers do not know how to coach on quality.\n- Champions exist in name only without a backlog or escalation route.\n- Teams confuse excitement with value.\n\n## System note\n\n\"The operating model should not start by asking how many licenses were assigned. It should start by checking whether the target persona has a real workflow problem, whether managers can coach on the right behavior, and whether baseline metrics can defend the business case after 30 days.\"\n"
   },
   "guide-002": {
     "guide": {
@@ -867,7 +867,7 @@ export const guideDetails = {
       ],
       "last_updated": "2026-04-09"
     },
-    "body": "# Champion Community Launch Kit\n\n## Objective\n\nDesign a champion network that accelerates adoption, localizes learning, and absorbs first-line questions before central support becomes the bottleneck.\n\n## Champion model\n\n- one champion per 50 to 80 active users\n- one community lead per region\n- one shared FAQ and escalation backlog\n- one monthly story of value from the field\n\n## Champion responsibilities\n\n- run office hours and local demos\n- collect prompt-quality issues and support trends\n- model good behavior in front of peers\n- redirect unsafe or out-of-scope requests\n- keep a simple log of top blockers and wins\n\n## Scale pattern for 1,000+ users\n\n- recruit by manager nomination and performance credibility\n- give every champion the same starter pack\n- group them by timezone and business function\n- publish one digest each month with wins, FAQs, and upcoming priorities\n\n## Minimum starter pack\n\n- role-based prompt examples\n- approved data and human review boundaries\n- FAQ and escalation matrix\n- office hours facilitation guide\n- feedback form and weekly summary template\n\n## Operating cadence\n\n- weekly office hours\n- weekly champion sync\n- biweekly FAQ refresh\n- monthly spotlight and sponsor readout\n\n## Metrics\n\n- champion attendance rate\n- questions solved by champions\n- repeat use after training\n- sentiment from office hours\n- issue escalation closure time\n\n## Interview line\n\n\"I like champions because they create local trust, not because they are a free support channel. If I cannot tell you how champions are recruited, trained, measured, and supported, then I do not really have a champions program.\"\n"
+    "body": "# Champion Community Launch Kit\n\n## Objective\n\nDesign a champion network that accelerates adoption, localizes learning, and absorbs first-line questions before central support becomes the bottleneck.\n\n## Champion model\n\n- one champion per 50 to 80 active users\n- one community lead per region\n- one shared FAQ and escalation backlog\n- one monthly story of value from the field\n\n## Champion responsibilities\n\n- run office hours and local demos\n- collect prompt-quality issues and support trends\n- model good behavior in front of peers\n- redirect unsafe or out-of-scope requests\n- keep a simple log of top blockers and wins\n\n## Scale pattern for 1,000+ users\n\n- recruit by manager nomination and performance credibility\n- give every champion the same starter pack\n- group them by timezone and business function\n- publish one digest each month with wins, FAQs, and upcoming priorities\n\n## Minimum starter pack\n\n- role-based prompt examples\n- approved data and human review boundaries\n- FAQ and escalation matrix\n- office hours facilitation guide\n- feedback form and weekly summary template\n\n## Operating cadence\n\n- weekly office hours\n- weekly champion sync\n- biweekly FAQ refresh\n- monthly spotlight and sponsor readout\n\n## Metrics\n\n- champion attendance rate\n- questions solved by champions\n- repeat use after training\n- sentiment from office hours\n- issue escalation closure time\n\n## Walkthrough line\n\n\"I like champions because they create local trust, not because they are a free support channel. If I cannot tell you how champions are recruited, trained, measured, and supported, then I do not really have a champions program.\"\n"
   },
   "guide-003": {
     "guide": {
@@ -884,7 +884,7 @@ export const guideDetails = {
         "governance"
       ],
       "path": "docs/prompt_review_standard.md",
-      "excerpt": "Teach people when Copilot is a drafting accelerator and when it is only a starting point.",
+      "excerpt": "Teach people when AI assistant is a drafting accelerator and when it is only a starting point.",
       "owner": "Responsible AI Lead",
       "distribution": [
         "all-user portal",
@@ -893,7 +893,7 @@ export const guideDetails = {
       ],
       "last_updated": "2026-04-09"
     },
-    "body": "# Prompt and Human Review Standard\n\n## Why this exists\n\nCopilot adoption stalls when people hear either \"AI can do everything\" or \"AI cannot be trusted at all.\" This standard creates a practical middle path: Copilot accelerates drafting, comparison, summarization, and recap work, but people still own judgment.\n\n## Safe pattern\n\n- start from an approved use case\n- use approved data sources\n- ask for a bounded draft\n- review for correctness, tone, and policy alignment\n- send or publish only after human confirmation\n\n## Human review matrix\n\n| Scenario | Human review required? | Why |\n| --- | --- | --- |\n| Meeting recap draft | Yes | Actions and owners must be confirmed |\n| Email draft to internal team | Yes | Tone and accuracy still matter |\n| Finance variance summary | Yes | Numeric interpretation needs review |\n| Legal clause comparison notes | Yes | Copilot supports analysis, not final legal judgment |\n| FAQ rewrite for internal portal | Yes | Policy wording must stay aligned |\n\n## Bad patterns\n\n- asking Copilot for final approval language\n- skipping baseline templates in regulated workflows\n- using public or unapproved information sources\n- assuming translation quality is production-ready without review\n\n## Quality check\n\nReview every important output for:\n\n- accuracy\n- missing nuance\n- overconfidence\n- policy drift\n- audience tone\n\n## Coaching message\n\n\"Use Copilot to produce a better first draft faster. Use your judgment to decide whether the draft is ready.\"\n"
+    "body": "# Prompt and Human Review Standard\n\n## Why this exists\n\nAI assistant adoption stalls when people hear either \"AI can do everything\" or \"AI cannot be trusted at all.\" This standard creates a practical middle path: AI assistant accelerates drafting, comparison, summarization, and recap work, but people still own judgment.\n\n## Safe pattern\n\n- start from an approved use case\n- use approved data sources\n- ask for a bounded draft\n- review for correctness, tone, and policy alignment\n- send or publish only after human confirmation\n\n## Human review matrix\n\n| Scenario | Human review required? | Why |\n| --- | --- | --- |\n| Meeting recap draft | Yes | Actions and owners must be confirmed |\n| Email draft to internal team | Yes | Tone and accuracy still matter |\n| Finance variance summary | Yes | Numeric interpretation needs review |\n| Legal clause comparison notes | Yes | AI assistant supports analysis, not final legal judgment |\n| FAQ rewrite for internal portal | Yes | Policy wording must stay aligned |\n\n## Bad patterns\n\n- asking AI assistant for final approval language\n- skipping baseline templates in regulated workflows\n- using public or unapproved information sources\n- assuming translation quality is production-ready without review\n\n## Quality check\n\nReview every important output for:\n\n- accuracy\n- missing nuance\n- overconfidence\n- policy drift\n- audience tone\n\n## Coaching message\n\n\"Use AI assistant to produce a better first draft faster. Use your judgment to decide whether the draft is ready.\"\n"
   },
   "guide-004": {
     "guide": {
@@ -919,7 +919,7 @@ export const guideDetails = {
       ],
       "last_updated": "2026-04-09"
     },
-    "body": "# Multi-Geo Change Communications Pack\n\n## Purpose\n\nMake the core Copilot message consistent across countries while allowing local leaders to speak in language and examples that people trust.\n\n## Global message spine\n\n- why Copilot is being introduced\n- which workflows are in scope first\n- what success looks like in 30 days\n- what Copilot can and cannot do\n- where to get help\n\n## Local adaptation rules\n\n- translate examples, not just policy terms\n- localize office hour timings\n- name local champions and local support channels\n- adapt the manager FAQ to regional objections\n\n## Audience-specific messages\n\n- **Executives**: focus on business problem, value, and governance confidence\n- **Managers**: focus on coaching, quality standards, and change reinforcement\n- **Practitioners**: focus on when to use Copilot and what a good first week looks like\n- **Champions**: focus on feedback capture and unblock paths\n\n## Communication channels\n\n- steering committee packet\n- manager cascade deck\n- internal project site\n- FAQ page\n- recorded onboarding\n- office hours follow-up\n\n## Localization checklist\n\n- confirm language owner\n- confirm market-specific examples\n- confirm support route\n- confirm region-specific policy notes\n- confirm translation review before publish\n\n## Interview line\n\n\"For multi-geo rollout, consistency matters, but credibility matters more. I want a global narrative with local proof points, local champions, and local support coverage.\"\n"
+    "body": "# Multi-Geo Change Communications Pack\n\n## Purpose\n\nMake the core AI assistant message consistent across countries while allowing local leaders to speak in language and examples that people trust.\n\n## Global message spine\n\n- why AI assistant is being introduced\n- which workflows are in scope first\n- what success looks like in 30 days\n- what AI assistant can and cannot do\n- where to get help\n\n## Local adaptation rules\n\n- translate examples, not just policy terms\n- localize office hour timings\n- name local champions and local support channels\n- adapt the manager FAQ to regional objections\n\n## Audience-specific messages\n\n- **Executives**: focus on business problem, value, and governance confidence\n- **Managers**: focus on coaching, quality standards, and change reinforcement\n- **Practitioners**: focus on when to use AI assistant and what a good first week looks like\n- **Champions**: focus on feedback capture and unblock paths\n\n## Communication channels\n\n- steering committee packet\n- manager cascade deck\n- internal project site\n- FAQ page\n- recorded onboarding\n- office hours follow-up\n\n## Localization checklist\n\n- confirm language owner\n- confirm market-specific examples\n- confirm support route\n- confirm region-specific policy notes\n- confirm translation review before publish\n\n## Walkthrough line\n\n\"For multi-geo rollout, consistency matters, but credibility matters more. I want a global narrative with local proof points, local champions, and local support coverage.\"\n"
   },
   "guide-005": {
     "guide": {
@@ -930,7 +930,7 @@ export const guideDetails = {
       "summary": "Definition set for adoption, quality, time saved, support, retention, and business value measures.",
       "tags": [
         "KPI",
-        "Power BI",
+        "adoption analytics",
         "adoption",
         "analytics",
         "value"
@@ -939,13 +939,13 @@ export const guideDetails = {
       "excerpt": "License activation is not enough; value requires repeat use, quality lift, and business-owner validation.",
       "owner": "Adoption Analytics Lead",
       "distribution": [
-        "Power BI view",
+        "adoption analytics view",
         "exec readout",
         "weekly operating review"
       ],
       "last_updated": "2026-04-09"
     },
-    "body": "# Value Realization KPI Dictionary\n\n## Principle\n\nAdoption is not the same as value. I would show both, but I would never confuse them.\n\n## KPI set\n\n| KPI | What it means | Why it matters |\n| --- | --- | --- |\n| Weekly active use | Share of trained users who used Copilot this week | Tells us whether the workflow is sticking |\n| Repeat use after training | Users who return in week 2 and week 4 | Better proxy for habit formation than launch-day activity |\n| Quality-approved drafts | Manager or supervisor approved AI-assisted outputs | Protects trust and avoids vanity metrics |\n| Time saved | Minutes reduced in a defined workflow | Connects directly to business value |\n| Support reopen rate | Issues reopened after initial answer | Shows whether enablement is actually clear |\n| Champion-solved issues | Questions closed by champions before central support | Indicates healthy local enablement |\n\n## Threshold examples\n\n- weekly active use above 60 percent in first 30 days\n- repeat use above 75 percent after guided training\n- quality approval above 82 percent for regulated use cases\n- support reopen rate below 7 percent after wave stabilization\n\n## Power BI view design\n\n- sponsor summary page\n- persona comparison page\n- regional trend page\n- top blockers page\n- experiment tracker page\n\n## Rules for sponsor readouts\n\n- compare post-launch data to baseline\n- separate adoption metrics from outcome metrics\n- explain changes in business language, not tool language\n- show one recommendation: scale, refine, or stop\n\n## Interview line\n\n\"I would absolutely show weekly active use, but I would never stop there. I want repeat usage, quality approval, and some business-owner validation that the workflow is genuinely better.\"\n"
+    "body": "# Value Realization KPI Dictionary\n\n## Principle\n\nAdoption is not the same as value. The walkthrough shows both, but the system should never confuse them.\n\n## KPI set\n\n| KPI | What it means | Why it matters |\n| --- | --- | --- |\n| Weekly active use | Share of trained users who used AI assistant this week | Tells us whether the workflow is sticking |\n| Repeat use after training | Users who return in week 2 and week 4 | Better proxy for habit formation than launch-day activity |\n| Quality-approved drafts | Manager or supervisor approved AI-assisted outputs | Protects trust and avoids vanity metrics |\n| Time saved | Minutes reduced in a defined workflow | Connects directly to business value |\n| Support reopen rate | Issues reopened after initial answer | Shows whether enablement is actually clear |\n| Champion-solved issues | Questions closed by champions before central support | Indicates healthy local enablement |\n\n## Threshold examples\n\n- weekly active use above 60 percent in first 30 days\n- repeat use above 75 percent after guided training\n- quality approval above 82 percent for regulated use cases\n- support reopen rate below 7 percent after wave stabilization\n\n## adoption analytics view design\n\n- sponsor summary page\n- persona comparison page\n- regional trend page\n- top blockers page\n- experiment tracker page\n\n## Rules for sponsor readouts\n\n- compare post-launch data to baseline\n- separate adoption metrics from outcome metrics\n- explain changes in business language, not tool language\n- show one recommendation: scale, refine, or stop\n\n## Walkthrough line\n\n\"The value readout should show weekly active use, but it should never stop there. The value model needs repeat usage, quality approval, and business-owner validation that the workflow is genuinely better.\"\n"
   },
   "guide-006": {
     "guide": {
@@ -967,87 +967,87 @@ export const guideDetails = {
       "distribution": [
         "steering meetings",
         "working sessions",
-        "interview appendix"
+        "walkthrough appendix"
       ],
       "last_updated": "2026-04-09"
     },
-    "body": "# Facilitation, Parking Lot, and Decision Log Toolkit\n\n## Meeting design\n\nEvery executive or practitioner workshop should end with a clear answer to three questions:\n\n1. What decision was made?\n2. Who owns the next step?\n3. By when?\n\n## Visible timer pattern\n\n- 10 minutes: objective and current data\n- 15 minutes: decisions and blocker removal\n- 5 minutes: parking lot review and close\n\nThe timer is not cosmetic. It keeps strong opinions from consuming the session.\n\n## Parking lot rules\n\n- park only items that are important but not critical to today’s decision\n- assign an owner before the meeting ends\n- give every parked item a revisit date\n\n## Decision log fields\n\n- decision statement\n- owner\n- date\n- dependencies\n- status\n- next review date\n\n## Objection handling pattern\n\nWhen someone says:\n\n- \"The quality is not good enough.\"\n- \"This feels unsafe.\"\n- \"People are scared of AI.\"\n\nDo not argue in the abstract. Convert the concern into:\n\n- a hypothesis\n- an owner\n- a target date\n- a measurable success metric\n\n## Example\n\nConcern: \"Finance managers do not trust AI-generated summaries.\"\n\nExperiment:\n\n- hypothesis: approved templates plus manager checklists will hold quality above threshold\n- owner: finance controller\n- date: April 19, 2026\n- success metric: approval stays above 85 percent in the pilot\n\n## Interview line\n\n\"My job in a workshop is not to win the debate. My job is to keep the room outcome-focused, surface the real objection, and turn it into a measurable next step.\"\n"
+    "body": "# Facilitation, Parking Lot, and Decision Log Toolkit\n\n## Meeting design\n\nEvery executive or practitioner workshop should end with a clear answer to three questions:\n\n1. What decision was made?\n2. Who owns the next step?\n3. By when?\n\n## Visible timer pattern\n\n- 10 minutes: objective and current data\n- 15 minutes: decisions and blocker removal\n- 5 minutes: parking lot review and close\n\nThe timer is not cosmetic. It keeps strong opinions from consuming the session.\n\n## Parking lot rules\n\n- park only items that are important but not critical to today’s decision\n- assign an owner before the meeting ends\n- give every parked item a revisit date\n\n## Decision log fields\n\n- decision statement\n- owner\n- date\n- dependencies\n- status\n- next review date\n\n## Objection handling pattern\n\nWhen someone says:\n\n- \"The quality is not good enough.\"\n- \"This feels unsafe.\"\n- \"People are scared of AI.\"\n\nDo not argue in the abstract. Convert the concern into:\n\n- a hypothesis\n- an owner\n- a target date\n- a measurable success metric\n\n## Example\n\nConcern: \"Finance managers do not trust AI-generated summaries.\"\n\nExperiment:\n\n- hypothesis: approved templates plus manager checklists will hold quality above threshold\n- owner: finance controller\n- date: April 19, 2026\n- success metric: approval stays above 85 percent in the pilot\n\n## Walkthrough line\n\n\"The workshop lead is not there to win the debate. The operating task is to keep the room outcome-focused, surface the real objection, and turn it into a measurable next step.\"\n"
   },
   "guide-007": {
     "guide": {
       "id": "guide-007",
-      "title": "JD Alignment Matrix",
+      "title": "Requirement Alignment Matrix",
       "audience": "executive",
-      "category": "interview",
-      "summary": "Bullet-by-bullet mapping of the Microsoft job description to concrete project evidence and honest proof boundaries.",
+      "category": "walkthrough",
+      "summary": "Bullet-by-bullet mapping of the enterprise adoption requirements to concrete project evidence and honest proof boundaries.",
       "tags": [
-        "JD",
+        "requirements",
         "alignment",
         "evidence",
-        "interview",
-        "Microsoft"
+        "walkthrough",
+        "enterprise platform"
       ],
-      "path": "docs/jd_alignment_matrix.md",
+      "path": "docs/requirement_alignment_matrix.md",
       "excerpt": "Every required and preferred qualification is mapped to a project artifact, with explicit notes on what the project can and cannot prove.",
-      "owner": "Candidate Portfolio",
+      "owner": "Systems Gallery",
       "distribution": [
-        "interview packet",
+        "walkthrough packet",
         "portfolio appendix",
         "self-review"
       ],
       "last_updated": "2026-04-09"
     },
-    "body": "# JD Alignment Matrix\n\nThis matrix maps the Microsoft AI Adoption Architect / Consultant job description to concrete evidence in the project.\n\n## Required Qualifications\n\n| Job description item | Project evidence | Honest note |\n| --- | --- | --- |\n| Proven experience in enterprise consulting, digital transformation, or business change enablement | [role_fit.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/role_fit.md), [interview_storyline.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/interview_storyline.md), dashboard role-fit section | A project can show consulting structure and thinking, but it cannot replace real years of client delivery experience. |\n| Experience leading use case identification and business case development for new AI technologies | [copilot_business_case_playbook.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/copilot_business_case_playbook.md), business-case view in [App.tsx](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx#L426), planner logic in [agents.py](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/backend/app/agents.py#L196) | Strongly demonstrated. |\n| Demonstrated experience guiding Microsoft 365 or Copilot programs with large enterprise customers | Microsoft 365 Copilot scenarios, persona portfolio, rollout waves, support model, business case, facilitation toolkit | The project proves readiness to discuss and design these programs; it does not prove real customer tenure by itself. |\n| Change Management - Facilitate Copilot AI usage readiness assessments and develop action plans | [copilot_readiness_assessment.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/copilot_readiness_assessment.md), readiness scorecard in [App.tsx](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx#L405) | Strongly demonstrated. |\n| Training Development – Design Copilot AI usage training curricula | [champion_launch_kit.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/champion_launch_kit.md), training surfaces in [App.tsx](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx#L489) | Strongly demonstrated. |\n| Data Analysis - Design and interpret AI use adoption analytics and KPIs | [value_realization_kpi_dictionary.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/value_realization_kpi_dictionary.md), Power BI views in [App.tsx](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx#L533) | Strongly demonstrated. |\n| Feedback & Support - Implement feedback mechanisms and support systems | [feedback_support_operating_model.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/feedback_support_operating_model.md), support model in [App.tsx](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx#L510) | Now explicitly demonstrated. |\n| Value Measurement - Measure AI adoption success and drive value realization | planner output and KPI views in [agents.py](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/backend/app/agents.py#L222), [value_realization_kpi_dictionary.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/value_realization_kpi_dictionary.md) | Strongly demonstrated. |\n| Expertise on adoption and change management frameworks (e.g., Prosci or equivalent) | ADKAR framing in [copilot_readiness_assessment.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/copilot_readiness_assessment.md) | Demonstrates framework fluency, not certification ownership. |\n| Strong understanding of AI, productivity transformation, organizational readiness, and skilling strategies | Overall architecture and documents | Strongly demonstrated. |\n| Proven ability to work cross-functionally with business, IT, and executive stakeholders | persona portfolio, stakeholder lists, facilitation board | A project can model this clearly, though real examples should also come from your spoken answers. |\n| Excellent communication, facilitation, and stakeholder engagement skills | [demo_script_english.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/demo_script_english.md), [facilitation_toolkit.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/facilitation_toolkit.md) | Demonstrated through materials and talk track. |\n| Experience with internal communications, skilling, or change enablement programs in large organizations | [multi_geo_change_comms.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/multi_geo_change_comms.md), [champion_launch_kit.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/champion_launch_kit.md) | Strongly demonstrated. |\n| Experience working with adoption and success teams to accelerate impact and remove blockers | [feedback_support_operating_model.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/feedback_support_operating_model.md), support and feedback model in the UI | Explicitly demonstrated. |\n| Facilitate exec and practitioner discussions; keep decisions moving with visible timers, parking lot, and a decision log | [facilitation_toolkit.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/facilitation_toolkit.md), facilitation section in [App.tsx](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx#L572) | Strongly demonstrated. |\n| Facilitation & objection handling: Convert “AI fear/quality/safety” into experiments with owners and dates | experiment planner in [agents.py](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/backend/app/agents.py#L128), objection cards in [App.tsx](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx#L596) | Strongly demonstrated. |\n\n## Preferred Qualifications\n\n| Preferred item | Project evidence |\n| --- | --- |\n| Experience enabling champions communities at 1k+ scale | Champion model and capacity metrics in the dashboard and [champion_launch_kit.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/champion_launch_kit.md) |\n| Deep enablement for finance, legal, or customer service personas | Persona-specific use cases and business-case views in the dashboard |\n| Experience with Multi-geo/multilingual rollouts | [multi_geo_change_comms.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/multi_geo_change_comms.md), packet checks for geo and language |\n| Creation of learning assets and Power BI adoption views | training content, KPI dictionary, and Power BI view designs in the dashboard |\n\n## Certifications\n\nThe project can support a strong interview conversation around Prosci-style change management and AI fundamentals, but it cannot claim a certification you do not hold. If you do not have the certification yet, say so directly and position the project as proof of practical framework fluency.\n"
+    "body": "# Requirement Alignment Matrix\n\nThis matrix maps the Enterprise AI Adoption Consultant operating requirements to concrete evidence in the project.\n\n## Required Qualifications\n\n| Job description item | Project evidence | Honest note |\n| --- | --- | --- |\n| Proven experience in enterprise consulting, digital transformation, or business change enablement | [role_fit.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/capability_fit.md), [walkthrough_storyline.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/walkthrough_storyline.md), dashboard capability-fit section | A project can show consulting structure and thinking, but it cannot replace real years of client delivery experience. |\n| Experience leading use case identification and business case development for new AI technologies | [copilot_business_case_playbook.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/ai_assistant_business_case_playbook.md), business-case view in [App.tsx](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx#L426), planner logic in [agents.py](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/backend/app/agents.py#L196) | Strongly demonstrated. |\n| Demonstrated experience guiding enterprise AI assistant programs with large enterprise customers | Enterprise AI Assistant scenarios, persona portfolio, rollout waves, support model, business case, facilitation toolkit | The project proves readiness to discuss and design these programs; it does not prove real customer tenure by itself. |\n| Change Management - Facilitate AI assistant usage readiness assessments and develop action plans | [copilot_readiness_assessment.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/ai_assistant_readiness_assessment.md), readiness scorecard in [App.tsx](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx#L405) | Strongly demonstrated. |\n| Training Development – Design AI assistant usage training curricula | [champion_launch_kit.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/champion_launch_kit.md), training surfaces in [App.tsx](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx#L489) | Strongly demonstrated. |\n| Data Analysis - Design and interpret AI use adoption analytics and KPIs | [value_realization_kpi_dictionary.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/value_realization_kpi_dictionary.md), adoption analytics views in [App.tsx](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx#L533) | Strongly demonstrated. |\n| Feedback & Support - Implement feedback mechanisms and support systems | [feedback_support_operating_model.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/feedback_support_operating_model.md), support model in [App.tsx](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx#L510) | Now explicitly demonstrated. |\n| Value Measurement - Measure AI adoption success and drive value realization | planner output and KPI views in [agents.py](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/backend/app/agents.py#L222), [value_realization_kpi_dictionary.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/value_realization_kpi_dictionary.md) | Strongly demonstrated. |\n| Expertise on adoption and change management frameworks (e.g., Prosci or equivalent) | ADKAR framing in [copilot_readiness_assessment.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/ai_assistant_readiness_assessment.md) | Demonstrates framework fluency, not certification ownership. |\n| Strong understanding of AI, productivity transformation, organizational readiness, and skilling strategies | Overall architecture and documents | Strongly demonstrated. |\n| Proven ability to work cross-functionally with business, IT, and executive stakeholders | persona portfolio, stakeholder lists, facilitation board | A project can model this clearly, though real examples should also come from your spoken answers. |\n| Excellent communication, facilitation, and stakeholder engagement skills | [demo_script_english.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/system_walkthrough_english.md), [facilitation_toolkit.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/facilitation_toolkit.md) | Demonstrated through materials and talk track. |\n| Experience with internal communications, skilling, or change enablement programs in large organizations | [multi_geo_change_comms.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/multi_geo_change_comms.md), [champion_launch_kit.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/champion_launch_kit.md) | Strongly demonstrated. |\n| Experience working with adoption and success teams to accelerate impact and remove blockers | [feedback_support_operating_model.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/feedback_support_operating_model.md), support and feedback model in the UI | Explicitly demonstrated. |\n| Facilitate exec and practitioner discussions; keep decisions moving with visible timers, parking lot, and a decision log | [facilitation_toolkit.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/facilitation_toolkit.md), facilitation section in [App.tsx](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx#L572) | Strongly demonstrated. |\n| Facilitation & objection handling: Convert “AI fear/quality/safety” into experiments with owners and dates | experiment planner in [agents.py](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/backend/app/agents.py#L128), objection cards in [App.tsx](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/src/App.tsx#L596) | Strongly demonstrated. |\n\n## Preferred Qualifications\n\n| Preferred item | Project evidence |\n| --- | --- |\n| Experience enabling champions communities at 1k+ scale | Champion model and capacity metrics in the dashboard and [champion_launch_kit.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/champion_launch_kit.md) |\n| Deep enablement for finance, legal, or customer service personas | Persona-specific use cases and business-case views in the dashboard |\n| Experience with Multi-geo/multilingual rollouts | [multi_geo_change_comms.md](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/multi_geo_change_comms.md), packet checks for geo and language |\n| Creation of learning assets and adoption analytics adoption views | training content, KPI dictionary, and adoption analytics view designs in the dashboard |\n\n## Certifications\n\nThe project can support a strong walkthrough conversation around Prosci-style change management and AI fundamentals, but it cannot claim a certification you do not hold. If you do not have the certification yet, say so directly and position the project as proof of practical framework fluency.\n"
   },
   "guide-008": {
     "guide": {
       "id": "guide-008",
       "title": "English Demo Script",
       "audience": "executive",
-      "category": "interview",
-      "summary": "Tight 7-minute English walkthrough for the second-round Microsoft interview.",
+      "category": "walkthrough",
+      "summary": "Tight 7-minute English system walkthrough for the adoption surface.",
       "tags": [
         "demo",
         "English",
-        "interview",
+        "walkthrough",
         "script",
         "walkthrough"
       ],
-      "path": "docs/demo_script_english.md",
-      "excerpt": "Open with the business problem, show the role-fit board, run the planner, and close with the value and support model.",
-      "owner": "Candidate Portfolio",
+      "path": "docs/system_walkthrough_english.md",
+      "excerpt": "Open with the business problem, show the capability-fit board, run the planner, and close with the value and support model.",
+      "owner": "Systems Gallery",
       "distribution": [
-        "interview rehearsal",
+        "walkthrough rehearsal",
         "self-review"
       ],
       "last_updated": "2026-04-09"
     },
-    "body": "# English Demo Script\n\n## 30-second opener\n\n\"I built this as a portfolio-safe simulation of how I would run a Microsoft 365 Copilot adoption program. Instead of focusing on a generic AI demo, I focused on the actual responsibilities in this role: readiness assessment, use case prioritization, training and champions, adoption analytics, support, value realization, and executive facilitation.\"\n\n## 7-minute flow\n\n### 1. Start on the home screen\n\n\"The top section shows the project scope, the readiness score, and the main delivery metrics. I wanted the reviewer to understand the operating model immediately.\"\n\n### 2. Show role match\n\n\"This section maps the project directly to the job description. I did that because I wanted the evidence trail to be visible rather than implied.\"\n\n### 3. Show one persona-based use case\n\n\"For example, the finance close sprint is not only a prompt scenario. It has a business owner, a wave plan, success goals, and guardrails.\"\n\n### 4. Show readiness and business case\n\n\"Below that, I show an ADKAR-style readiness scorecard and business-case metrics. This is how I would keep the rollout grounded in both change management and measurable value.\"\n\n### 5. Show support and feedback\n\n\"I also modeled support and feedback as first-class parts of the adoption system. Champions, helpdesk, feedback themes, and Power BI views all feed the operating rhythm.\"\n\n### 6. Run the planner\n\n\"If I enter a sponsor scenario, the planner produces business case actions, readiness actions, training, communications, support, feedback, facilitation, and value steps. It also converts objections into experiments with owners and dates.\"\n\n### 7. Show the rollout packet preview\n\n\"Finally, the packet checker validates whether the executive review pack includes the owner, scope, business case, KPI, training, communications, support, champion model, decision log, geo scope, and language plan.\"\n\n## 15-second close\n\n\"What I wanted to demonstrate is that I can connect business outcomes, change management, cross-functional execution, and practical technical delivery in one coherent Copilot adoption story.\"\n"
+    "body": "# English Demo Script\n\n## 30-second opener\n\n\"This surface was built as a public-safe simulation of how an operator can run a Enterprise AI Assistant adoption program. Instead of focusing on a generic AI demo, The surface focuses on the actual responsibilities in this role: readiness assessment, use case prioritization, training and champions, adoption analytics, support, value realization, and executive facilitation.\"\n\n## 7-minute flow\n\n### 1. Start on the home screen\n\n\"The top section shows the project scope, the readiness score, and the main delivery metrics. I wanted the operator to understand the operating model immediately.\"\n\n### 2. Show operating fit\n\n\"This section maps the project directly to the operating requirements. I did that because I wanted the evidence trail to be visible rather than implied.\"\n\n### 3. Show one persona-based use case\n\n\"For example, the finance close sprint is not only a prompt scenario. It has a business owner, a wave plan, success goals, and guardrails.\"\n\n### 4. Show readiness and business case\n\n\"Below that, I show an ADKAR-style readiness scorecard and business-case metrics. This is how the operating model keeps the rollout grounded in both change management and measurable value.\"\n\n### 5. Show support and feedback\n\n\"I also modeled support and feedback as first-class parts of the adoption system. Champions, helpdesk, feedback themes, and adoption analytics views all feed the operating rhythm.\"\n\n### 6. Run the planner\n\n\"If I enter a sponsor scenario, the planner produces business case actions, readiness actions, training, communications, support, feedback, facilitation, and value steps. It also converts objections into experiments with owners and dates.\"\n\n### 7. Show the rollout packet preview\n\n\"Finally, the packet checker validates whether the executive review pack includes the owner, scope, business case, KPI, training, communications, support, champion model, decision log, geo scope, and language plan.\"\n\n## 15-second close\n\n\"What I wanted to demonstrate is that I can connect business outcomes, change management, cross-functional execution, and practical technical delivery in one coherent AI assistant adoption story.\"\n"
   },
   "guide-009": {
     "guide": {
       "id": "guide-009",
       "title": "STAR Story Bank",
       "audience": "executive",
-      "category": "interview",
+      "category": "walkthrough",
       "summary": "English STAR-style answers for consulting, facilitation, adoption, stakeholder alignment, and objection handling.",
       "tags": [
         "STAR",
         "behavioral",
         "English",
-        "interview",
+        "walkthrough",
         "stakeholders"
       ],
-      "path": "docs/star_story_bank.md",
+      "path": "docs/operating_story_bank.md",
       "excerpt": "Use concise stories that show structure, ownership, and measurable outcomes without overstating experience.",
-      "owner": "Candidate Portfolio",
+      "owner": "Systems Gallery",
       "distribution": [
-        "interview rehearsal",
+        "walkthrough rehearsal",
         "self-review"
       ],
       "last_updated": "2026-04-09"
     },
-    "body": "# STAR Story Bank\n\nUse these as structure guides, not scripts to recite word for word.\n\n## 1. Stakeholder alignment\n\n### Situation\n\nA cross-functional group wanted to move quickly, but business, IT, and leadership had different expectations.\n\n### Task\n\nI needed to create alignment without slowing momentum.\n\n### Action\n\nI clarified the business problem, defined what success meant, created a visible decision structure, and separated immediate decisions from parking-lot topics.\n\n### Result\n\nThe group moved from abstract debate to concrete next steps with owners, dates, and a shared success definition.\n\n## 2. Change resistance\n\n### Situation\n\nSome users were curious about AI, but others were worried about trust and job impact.\n\n### Task\n\nI needed to keep the rollout credible and reduce resistance.\n\n### Action\n\nI treated the concern as a change-management problem, not a messaging problem. I created reviewed examples, role-based training, and small experiments with clear success metrics.\n\n### Result\n\nThe discussion shifted from fear to evidence, and the team had a safer way to test adoption without overcommitting.\n\n## 3. Quality objection\n\n### Situation\n\nLeaders liked the efficiency story, but they worried the quality of AI-assisted outputs would not be acceptable.\n\n### Task\n\nI needed to prove that quality would stay within acceptable boundaries.\n\n### Action\n\nI introduced review checkpoints, approved prompt patterns, and a simple rubric for what good output looked like.\n\n### Result\n\nThe conversation became more objective because quality had a review method instead of a vague standard.\n\n## 4. Executive facilitation\n\n### Situation\n\nA steering discussion had too many side topics and was drifting away from the actual decision.\n\n### Task\n\nI needed to keep the meeting outcome-focused.\n\n### Action\n\nI used a visible timer, a parking lot, and a decision log. I pushed side issues into follow-up items with owners and revisit dates.\n\n### Result\n\nThe meeting produced a clear decision and a cleaner action plan instead of another round of open-ended discussion.\n\n## 5. Support and blocker removal\n\n### Situation\n\nTeams adopted a new workflow, but many small issues kept slowing them down after training.\n\n### Task\n\nI needed a support model that would sustain adoption after launch.\n\n### Action\n\nI separated self-serve content, champion support, helpdesk escalation, and policy escalation. I also reviewed feedback themes weekly with the relevant owners.\n\n### Result\n\nThe program became more stable because blockers were surfaced and assigned before they damaged user trust.\n"
+    "body": "# STAR Story Bank\n\nUse these as structure guides, not scripts to recite word for word.\n\n## 1. Stakeholder alignment\n\n### Situation\n\nA cross-functional group wanted to move quickly, but business, IT, and leadership had different expectations.\n\n### Task\n\nI needed to create alignment without slowing momentum.\n\n### Action\n\nI clarified the business problem, defined what success meant, created a visible decision structure, and separated immediate decisions from parking-lot topics.\n\n### Result\n\nThe group moved from abstract debate to concrete next steps with owners, dates, and a shared success definition.\n\n## 2. Change resistance\n\n### Situation\n\nSome users were curious about AI, but others were worried about trust and workflow impact.\n\n### Task\n\nI needed to keep the rollout credible and reduce resistance.\n\n### Action\n\nThe workflow treats the concern as a change-management problem, not a messaging problem. I created reviewed examples, role-based training, and small experiments with clear success metrics.\n\n### Result\n\nThe discussion shifted from fear to evidence, and the team had a safer way to test adoption without overcommitting.\n\n## 3. Quality objection\n\n### Situation\n\nLeaders liked the efficiency story, but they worried the quality of AI-assisted outputs would not be acceptable.\n\n### Task\n\nI needed to prove that quality would stay within acceptable boundaries.\n\n### Action\n\nI introduced review checkpoints, approved prompt patterns, and a simple rubric for what good output looked like.\n\n### Result\n\nThe conversation became more objective because quality had a review method instead of a vague standard.\n\n## 4. Executive facilitation\n\n### Situation\n\nA steering discussion had too many side topics and was drifting away from the actual decision.\n\n### Task\n\nI needed to keep the meeting outcome-focused.\n\n### Action\n\nI used a visible timer, a parking lot, and a decision log. I pushed side issues into follow-up items with owners and revisit dates.\n\n### Result\n\nThe meeting produced a clear decision and a cleaner action plan instead of another round of open-ended discussion.\n\n## 5. Support and blocker removal\n\n### Situation\n\nTeams adopted a new workflow, but many small issues kept slowing them down after training.\n\n### Task\n\nI needed a support model that would sustain adoption after launch.\n\n### Action\n\nI separated self-serve content, champion support, helpdesk escalation, and policy escalation. I also reviewed feedback themes weekly with the relevant owners.\n\n### Result\n\nThe program became more stable because blockers were surfaced and assigned before they damaged user trust.\n"
   },
   "guide-010": {
     "guide": {
@@ -1055,23 +1055,23 @@ export const guideDetails = {
       "title": "30-60-90 Day Plan",
       "audience": "executive",
       "category": "strategy",
-      "summary": "How I would onboard into the role and create momentum in the first three months.",
+      "summary": "Three-month operating plan for creating rollout momentum.",
       "tags": [
         "30-60-90",
         "onboarding",
         "strategy",
-        "Copilot",
+        "AI assistant",
         "consulting"
       ],
-      "path": "docs/thirty_sixty_ninety_plan.md",
+      "path": "docs/rollout_plan.md",
       "excerpt": "The plan starts with listening and discovery, then moves into pilot shaping, adoption instrumentation, and scale decisions.",
-      "owner": "Candidate Portfolio",
+      "owner": "Systems Gallery",
       "distribution": [
-        "interview packet",
+        "walkthrough packet",
         "follow-up email"
       ],
       "last_updated": "2026-04-09"
     },
-    "body": "# 30-60-90 Day Plan\n\n## First 30 days\n\n- listen to current sponsors, business leads, IT owners, and adoption teams\n- review existing Copilot pilots, support data, and KPI definitions\n- identify the highest-potential workflows by value, readiness, and sponsor energy\n- confirm where the current support and communications model is weak\n\n## Days 31-60\n\n- shape one or two high-confidence pilot waves\n- align on business case, baseline, success KPI, and support model\n- build the training path, champion rhythm, and internal communications pack\n- define the steering cadence, decision log, and blocker-removal process\n\n## Days 61-90\n\n- run the pilots with weekly adoption, support, and quality readouts\n- convert objections into experiments with owners and dates\n- publish the first sponsor-facing value review\n- recommend whether to scale, refine, or stop based on evidence\n\n## Guiding principle\n\nI would try to earn trust early by bringing structure, clarity, and momentum. My first goal would not be to launch as much as possible. My first goal would be to make sure the right launch has the right operating model behind it.\n"
+    "body": "# 30-60-90 Day Plan\n\n## First 30 days\n\n- listen to current sponsors, business leads, IT owners, and adoption teams\n- review existing AI assistant pilots, support data, and KPI definitions\n- identify the highest-potential workflows by value, readiness, and sponsor energy\n- confirm where the current support and communications model is weak\n\n## Days 31-60\n\n- shape one or two high-confidence pilot waves\n- align on business case, baseline, success KPI, and support model\n- build the training path, champion rhythm, and internal communications pack\n- define the steering cadence, decision log, and blocker-removal process\n\n## Days 61-90\n\n- run the pilots with weekly adoption, support, and quality readouts\n- convert objections into experiments with owners and dates\n- publish the first sponsor-facing value review\n- recommend whether to scale, refine, or stop based on evidence\n\n## Guiding principle\n\nThe first phase earns trust by bringing structure, clarity, and momentum. The goal is not to launch as much as possible; it is to make sure the right launch has the right operating model behind it.\n"
   }
 } as const;

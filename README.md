@@ -1,13 +1,13 @@
-# Microsoft 365 Copilot Adoption Command Center
+# Enterprise AI Assistant Adoption Command Center
 
 [![CI](https://github.com/KIM3310/m365-copilot-adoption-command-center/actions/workflows/ci.yml/badge.svg)](https://github.com/KIM3310/m365-copilot-adoption-command-center/actions/workflows/ci.yml)
 [![Deploy Worker](https://github.com/KIM3310/m365-copilot-adoption-command-center/actions/workflows/deploy.yml/badge.svg)](https://github.com/KIM3310/m365-copilot-adoption-command-center/actions/workflows/deploy.yml)
 
-Portfolio-safe project tailored for the **AI Adoption Architect / Consultant** role at Microsoft.
+Public-safe project for enterprise AI assistant adoption, change management, and value realization.
 
-This repository is not a fake customer story. It is a synthetic enterprise rollout simulation designed to show how I would:
+This repository is not a fake customer story. It is a synthetic enterprise rollout simulation designed to show how the operating model can:
 
-- assess Microsoft 365 Copilot readiness,
+- assess Enterprise AI Assistant readiness,
 - prioritize persona-based use cases,
 - build training and champions motions,
 - design adoption and value KPIs,
@@ -27,7 +27,7 @@ This repository is not a fake customer story. It is a synthetic enterprise rollo
 - value framing beyond license activation
 
 ### 3. Adoption analytics and value realization
-- Power BI-style KPI framing
+- analytics-style KPI framing
 - weekly active use, repeat use, quality approval, support reopen rate
 - sponsor-ready value readout narrative
 
@@ -39,10 +39,10 @@ This repository is not a fake customer story. It is a synthetic enterprise rollo
 
 ## Main product surfaces
 
-- **React command center** for interview walkthroughs
+- **React command center** for system walkthroughs
 - **FastAPI backend** with deterministic planning and packet checks
 - **Guide library** for readiness, champions, governance, value measurement, and facilitation
-- **Interview pack** with talk track and English Q&A prep
+- **Walkthrough pack** with system notes and English Q&A prep
 
 ## Live links
 
@@ -83,7 +83,7 @@ npm run cf:check
 
 ## Cloudflare Deployment
 
-This repo now includes a Cloudflare Worker deployment path that serves the built React app as static assets and exposes the interview APIs from the Worker runtime.
+This repo now includes a Cloudflare Worker deployment path that serves the built React app as static assets and exposes the walkthrough APIs from the Worker runtime.
 
 ### Prepare and dry-run
 
@@ -175,54 +175,54 @@ Hardening runbook:
 - `GET /api/support-model`
 - `GET /api/facilitation`
 - `GET /api/search?q=champion`
-- `GET /api/interview/brief`
+- `GET /api/walkthrough/brief`
 - `POST /api/assistant/plan`
 - `POST /api/rollout-packet/preview`
 
-## Suggested interview walkthrough
+## Suggested system walkthrough
 
 1. Start on the dashboard and explain the synthetic enterprise scenario.
-2. Open the role-fit board and map each section to the Microsoft job description.
-3. Show one persona-based Copilot use case and its guardrails.
+2. Open the capability-fit board and map each section to the enterprise adoption operating model.
+3. Show one persona-based AI assistant use case and its guardrails.
 4. Run the planner with a sponsor scenario and explain why the recommendation is structured around readiness, training, support, and value.
 5. Show the facilitation board and explain how you keep workshops outcome-focused.
 6. Run the rollout packet preview to show how you gate executive communications.
 
 ## Documentation map
 
-- [`docs/copilot_readiness_assessment.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/copilot_readiness_assessment.md)
-- [`docs/copilot_business_case_playbook.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/copilot_business_case_playbook.md)
+- [`docs/ai_assistant_readiness_assessment.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/ai_assistant_readiness_assessment.md)
+- [`docs/ai_assistant_business_case_playbook.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/ai_assistant_business_case_playbook.md)
 - [`docs/champion_launch_kit.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/champion_launch_kit.md)
 - [`docs/prompt_review_standard.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/prompt_review_standard.md)
 - [`docs/multi_geo_change_comms.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/multi_geo_change_comms.md)
 - [`docs/value_realization_kpi_dictionary.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/value_realization_kpi_dictionary.md)
 - [`docs/feedback_support_operating_model.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/feedback_support_operating_model.md)
 - [`docs/facilitation_toolkit.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/facilitation_toolkit.md)
-- [`docs/role_fit.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/role_fit.md)
-- [`docs/jd_alignment_matrix.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/jd_alignment_matrix.md)
-- [`docs/demo_script_english.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/demo_script_english.md)
-- [`docs/star_story_bank.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/star_story_bank.md)
-- [`docs/thirty_sixty_ninety_plan.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/thirty_sixty_ninety_plan.md)
-- [`docs/interview_storyline.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/interview_storyline.md)
+- [`docs/capability_fit.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/capability_fit.md)
+- [`docs/requirement_alignment_matrix.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/requirement_alignment_matrix.md)
+- [`docs/system_walkthrough_english.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/system_walkthrough_english.md)
+- [`docs/operating_story_bank.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/operating_story_bank.md)
+- [`docs/rollout_plan.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/rollout_plan.md)
+- [`docs/walkthrough_storyline.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/walkthrough_storyline.md)
 - [`docs/english_technical_qna.md`](/Users/dolphin/Downloads/Codex/m365-copilot-adoption-command-center/docs/english_technical_qna.md)
 
 ## Structure
 
 ```text
 backend/app/           FastAPI API, planner logic, and synthetic program data
-src/                   React interview dashboard
-docs/                  Readiness, champions, KPI, facilitation, and interview materials
+src/                   React adoption dashboard
+docs/                  Readiness, champions, KPI, facilitation, and system walkthrough materials
 tests/                 Backend API tests
 src/test/              Frontend tests
 ```
 
 ## Truthfulness boundary
 
-This project is intentionally portfolio-safe.
+This project is intentionally public-safe.
 
 - No real customer data
-- No claim of real Microsoft customer delivery
-- No live Copilot tenant dependency
+- No claim of real customer delivery
+- No live AI assistant tenant dependency
 - No fake production telemetry
 
 What is real:
@@ -231,4 +231,4 @@ What is real:
 - the change management structure,
 - the KPI logic,
 - the facilitation mechanics,
-- the quality of the interview story.
+- the quality of the system walkthrough.

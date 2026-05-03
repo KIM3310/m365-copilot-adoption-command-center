@@ -31,9 +31,9 @@ from .snowflake_service import SnowflakeServiceError, get_snowflake_status, run_
 
 
 app = FastAPI(
-    title="Microsoft 365 Copilot Adoption Command Center API",
+    title="Enterprise AI Assistant Adoption Command Center API",
     version="0.1.0",
-    description="Portfolio-safe command center for enterprise Copilot adoption, change management, and value realization.",
+    description="Public-safe command center for enterprise AI assistant adoption, change management, and value realization.",
 )
 
 app.add_middleware(
@@ -168,23 +168,25 @@ def get_facilitation() -> dict:
     }
 
 
-@app.get("/api/role-fit")
+@app.get("/api/role-fit", include_in_schema=False)
+@app.get("/api/capability-fit")
 def get_role_fit() -> dict:
     return {"items": [card.model_dump() for card in ROLE_FIT_CARDS]}
 
 
-@app.get("/api/interview/brief")
+@app.get("/api/interview/brief", include_in_schema=False)
+@app.get("/api/walkthrough/brief")
 def get_runtime_brief() -> dict:
     return {
-        "headline": "Portfolio-safe Microsoft 365 Copilot adoption simulation for readiness, change, analytics, and value realization.",
+        "headline": "Public-safe Enterprise AI Assistant adoption simulation for readiness, change, analytics, and value realization.",
         "proof_points": [
-            "Persona-based Copilot use case portfolio",
+            "Persona-based AI assistant use case portfolio",
             "ADKAR-aligned readiness and training assets",
-            "Power BI-style adoption and value metric framing",
+            "analytics-style adoption and value metric framing",
             "Executive facilitation toolkit with decision log and parking lot",
             "Deterministic planner that turns objections into experiments",
         ],
-        "interview_hooks": [
+        "walkthrough_hooks": [
             "how to prioritize use cases instead of rolling out generic AI",
             "how to measure value beyond license activation",
             "how to handle quality, fear, and safety objections in workshops",
@@ -237,11 +239,11 @@ def search(q: str = Query(..., min_length=2)) -> SearchResponse:
         if _matches_query([card.requirement, card.proof, " ".join(card.artifacts)], q):
             results.append(
                 SearchResult(
-                    type="role-fit",
-                    id=f"role-fit-{index}",
+                    type="capability-fit",
+                    id=f"capability-fit-{index}",
                     title=card.requirement,
                     summary=card.proof,
-                    path="docs/role_fit.md",
+                    path="docs/capability_fit.md",
                 )
             )
     for index, item in enumerate(FACILITATION_ITEMS, start=1):

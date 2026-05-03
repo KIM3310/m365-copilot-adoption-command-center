@@ -57,6 +57,6 @@ Experiment:
 - date: April 19, 2026
 - success metric: approval stays above 85 percent in the pilot
 
-## Interview line
+## Walkthrough line
 
-"My job in a workshop is not to win the debate. My job is to keep the room outcome-focused, surface the real objection, and turn it into a measurable next step."
+"The workshop lead is not there to win the debate. The operating task is to keep the room outcome-focused, surface the real objection, and turn it into a measurable next step."

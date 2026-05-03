@@ -49,7 +49,7 @@ def test_guide_detail_returns_markdown_body() -> None:
     assert response.status_code == 200
     body = response.json()
     assert body["guide"]["id"] == "guide-001"
-    assert "Copilot Readiness Assessment Playbook" in body["body"]
+    assert "AI assistant Readiness Assessment Playbook" in body["body"]
 
 
 def test_search_returns_cross_surface_matches() -> None:
@@ -81,7 +81,7 @@ def test_plan_prefers_finance_program_for_finance_sponsor_request() -> None:
         "/api/assistant/plan",
         json={
             "request": (
-                "Our CFO wants a 30-day Copilot plan for finance close with readiness, "
+                "Our CFO wants a 30-day AI assistant plan for finance close with readiness, "
                 "champions, and clear KPI tracking."
             ),
             "audience": "finance",
@@ -89,7 +89,7 @@ def test_plan_prefers_finance_program_for_finance_sponsor_request() -> None:
     )
     assert response.status_code == 200
     body = response.json()
-    assert body["recommended_program"] == "Finance Close Copilot Sprint"
+    assert body["recommended_program"] == "Finance Close AI assistant Sprint"
     assert body["recommended_track"] == "value-realization"
     assert body["confidence_pct"] >= 85
     assert len(body["prioritized_use_cases"]) >= 2

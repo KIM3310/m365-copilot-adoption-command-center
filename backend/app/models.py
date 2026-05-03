@@ -154,7 +154,7 @@ class GuideDetail(BaseModel):
 
 
 class SearchResult(BaseModel):
-    type: Literal["use-case", "guide", "role-fit", "facilitation"]
+    type: Literal["use-case", "guide", "capability-fit", "facilitation"]
     id: str
     title: str
     summary: str
@@ -220,7 +220,7 @@ class RolloutPacketPreviewResponse(BaseModel):
     readiness_score: int
     distribution_channels: List[str]
     checklist: List[str]
-    reviewers: List[str]
+    operators: List[str]
     warnings: List[str]
     talking_points: List[str]
 

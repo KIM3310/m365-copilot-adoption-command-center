@@ -15,7 +15,7 @@ export type ProgramTrack =
   | 'value-realization';
 
 export type StatusTone = 'healthy' | 'watch' | 'risk';
-export type SearchResultType = 'use-case' | 'guide' | 'role-fit' | 'facilitation';
+export type SearchResultType = 'use-case' | 'guide' | 'capability-fit' | 'facilitation';
 
 export interface UseCase {
   id: string;
@@ -206,7 +206,7 @@ export interface RolloutPacketPreviewResponse {
   readiness_score: number;
   distribution_channels: string[];
   checklist: string[];
-  reviewers: string[];
+  operators: string[];
   warnings: string[];
   talking_points: string[];
 }

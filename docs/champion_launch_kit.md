@@ -49,6 +49,6 @@ Design a champion network that accelerates adoption, localizes learning, and abs
 - sentiment from office hours
 - issue escalation closure time
 
-## Interview line
+## Walkthrough line
 
 "I like champions because they create local trust, not because they are a free support channel. If I cannot tell you how champions are recruited, trained, measured, and supported, then I do not really have a champions program."

@@ -2,14 +2,14 @@
 
 ## Purpose
 
-Make the core Copilot message consistent across countries while allowing local leaders to speak in language and examples that people trust.
+Make the core AI assistant message consistent across countries while allowing local leaders to speak in language and examples that people trust.
 
 ## Global message spine
 
-- why Copilot is being introduced
+- why AI assistant is being introduced
 - which workflows are in scope first
 - what success looks like in 30 days
-- what Copilot can and cannot do
+- what AI assistant can and cannot do
 - where to get help
 
 ## Local adaptation rules
@@ -23,7 +23,7 @@ Make the core Copilot message consistent across countries while allowing local l
 
 - **Executives**: focus on business problem, value, and governance confidence
 - **Managers**: focus on coaching, quality standards, and change reinforcement
-- **Practitioners**: focus on when to use Copilot and what a good first week looks like
+- **Practitioners**: focus on when to use AI assistant and what a good first week looks like
 - **Champions**: focus on feedback capture and unblock paths
 
 ## Communication channels
@@ -43,6 +43,6 @@ Make the core Copilot message consistent across countries while allowing local l
 - confirm region-specific policy notes
 - confirm translation review before publish
 
-## Interview line
+## Walkthrough line
 
 "For multi-geo rollout, consistency matters, but credibility matters more. I want a global narrative with local proof points, local champions, and local support coverage."

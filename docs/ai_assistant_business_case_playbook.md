@@ -1,8 +1,8 @@
-# Copilot Business Case Playbook
+# AI assistant Business Case Playbook
 
 ## Purpose
 
-Translate Copilot interest into a sponsor-ready business case with a baseline, a target outcome, and a decision cadence.
+Translate AI assistant interest into a sponsor-ready business case with a baseline, a target outcome, and a decision cadence.
 
 ## Business case structure
 
@@ -27,6 +27,6 @@ Translate Copilot interest into a sponsor-ready business case with a baseline, a
 - show both adoption and outcome metrics
 - review value at 30 days and 90 days
 
-## Interview line
+## Walkthrough line
 
 "My business case starts with a workflow problem and a baseline, not with a feature list. That keeps the sponsor conversation grounded in value."

@@ -2,13 +2,13 @@
 
 ## Principle
 
-Adoption is not the same as value. I would show both, but I would never confuse them.
+Adoption is not the same as value. The walkthrough shows both, but the system should never confuse them.
 
 ## KPI set
 
 | KPI | What it means | Why it matters |
 | --- | --- | --- |
-| Weekly active use | Share of trained users who used Copilot this week | Tells us whether the workflow is sticking |
+| Weekly active use | Share of trained users who used AI assistant this week | Tells us whether the workflow is sticking |
 | Repeat use after training | Users who return in week 2 and week 4 | Better proxy for habit formation than launch-day activity |
 | Quality-approved drafts | Manager or supervisor approved AI-assisted outputs | Protects trust and avoids vanity metrics |
 | Time saved | Minutes reduced in a defined workflow | Connects directly to business value |
@@ -22,7 +22,7 @@ Adoption is not the same as value. I would show both, but I would never confuse 
 - quality approval above 82 percent for regulated use cases
 - support reopen rate below 7 percent after wave stabilization
 
-## Power BI view design
+## adoption analytics view design
 
 - sponsor summary page
 - persona comparison page
@@ -37,6 +37,6 @@ Adoption is not the same as value. I would show both, but I would never confuse 
 - explain changes in business language, not tool language
 - show one recommendation: scale, refine, or stop
 
-## Interview line
+## Walkthrough line
 
-"I would absolutely show weekly active use, but I would never stop there. I want repeat usage, quality approval, and some business-owner validation that the workflow is genuinely better."
+"The value readout should show weekly active use, but it should never stop there. The value model needs repeat usage, quality approval, and business-owner validation that the workflow is genuinely better."
