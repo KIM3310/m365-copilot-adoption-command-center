@@ -11,7 +11,7 @@ from .models import (
     PowerBIView,
     ProgramSignal,
     ReadinessDimension,
-    RoleFitCard,
+    CapabilityFitCard,
     SupportChannel,
     TrainingSession,
     UseCase,
@@ -544,43 +544,43 @@ FEEDBACK_THEMES = [
     ),
 ]
 
-ROLE_FIT_CARDS = [
-    RoleFitCard(
+CAPABILITY_FIT_CARDS = [
+    CapabilityFitCard(
         requirement="AI assistant usage readiness assessments and action plans",
         proof="The project includes an ADKAR-aligned readiness playbook, wave gates, persona-based scoring, and next-step recommendations.",
         artifacts=["docs/ai_assistant_readiness_assessment.md", "/api/overview", "/api/assistant/plan"],
     ),
-    RoleFitCard(
+    CapabilityFitCard(
         requirement="Training development and champion enablement at enterprise scale",
         proof="Role-based curricula, champion launch assets, multilingual support patterns, and office-hour operating design are built in.",
         artifacts=["docs/champion_launch_kit.md", "src/App.tsx", "/api/overview"],
     ),
-    RoleFitCard(
+    CapabilityFitCard(
         requirement="Adoption analytics, KPI interpretation, and analytics-style value views",
         proof="Adoption metrics, program signals, and the KPI dictionary show how to move from seat counts to measurable business impact.",
         artifacts=["docs/value_realization_kpi_dictionary.md", "/api/overview", "src/App.tsx"],
     ),
-    RoleFitCard(
+    CapabilityFitCard(
         requirement="Feedback mechanisms, support systems, and blocker removal with adoption/success teams",
         proof="The project models tiered support, feedback themes, champion escalation, and weekly blocker reviews instead of treating support as an afterthought.",
         artifacts=["/api/overview", "src/App.tsx", "docs/feedback_support_operating_model.md"],
     ),
-    RoleFitCard(
+    CapabilityFitCard(
         requirement="Deep enablement for finance, legal, and customer service personas",
         proof="The scenario portfolio explicitly separates finance, legal, customer service, and executive workflows so each persona has its own value case and guardrails.",
         artifacts=["/api/use-cases", "src/App.tsx", "docs/ai_assistant_business_case_playbook.md"],
     ),
-    RoleFitCard(
+    CapabilityFitCard(
         requirement="Multi-geo, multilingual rollout and internal communications",
         proof="The program includes geo-specific waves, local-language support, communications packs, and rollout packet checks for localization readiness.",
         artifacts=["docs/multi_geo_change_comms.md", "src/App.tsx", "/api/rollout-packet/preview"],
     ),
-    RoleFitCard(
+    CapabilityFitCard(
         requirement="Exec and practitioner facilitation with decision log and objection handling",
         proof="The facilitation toolkit, visible decision board, and objection-to-experiment tracker keep meetings outcome-focused.",
         artifacts=["docs/facilitation_toolkit.md", "src/App.tsx", "/api/assistant/plan"],
     ),
-    RoleFitCard(
+    CapabilityFitCard(
         requirement="Cross-functional change leadership across business, IT, and executives",
         proof="Every use case explicitly maps business owners, IT owners, governance checks, support channels, and sponsor readouts.",
         artifacts=["/api/overview", "docs/capability_fit.md", "docs/walkthrough_storyline.md"],

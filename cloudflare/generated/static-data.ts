@@ -233,7 +233,7 @@ export const overview = {
       "next_action": "Introduce a weekly blocker triage with adoption, support, and platform leads."
     }
   ],
-  "role_fit": [
+  "capability_fit": [
     {
       "requirement": "AI assistant usage readiness assessments and action plans",
       "proof": "The project includes an ADKAR-aligned readiness playbook, wave gates, persona-based scoring, and next-step recommendations.",

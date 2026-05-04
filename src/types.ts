@@ -116,7 +116,7 @@ export interface AdoptionMetric {
   detail: string;
 }
 
-export interface RoleFitCard {
+export interface CapabilityFitCard {
   requirement: string;
   proof: string;
   artifacts: string[];
@@ -265,7 +265,7 @@ export interface OverviewPayload {
   power_bi_views: PowerBIView[];
   support_channels: SupportChannel[];
   feedback_themes: FeedbackTheme[];
-  role_fit: RoleFitCard[];
+  capability_fit: CapabilityFitCard[];
   sample_requests: string[];
   use_cases: UseCase[];
   guides: Guide[];

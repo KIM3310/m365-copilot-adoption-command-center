@@ -367,7 +367,7 @@ function App() {
                 <h2>Why this fits the adoption operating model</h2>
               </div>
               <div className="stack">
-                {overview.role_fit.map((item) => (
+                {overview.capability_fit.map((item) => (
                   <article className="card" key={item.requirement}>
                     <div className="card-topline">
                       <span className="pill">direct match</span>

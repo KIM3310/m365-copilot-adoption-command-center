@@ -118,7 +118,7 @@ class AdoptionMetric(BaseModel):
     detail: str
 
 
-class RoleFitCard(BaseModel):
+class CapabilityFitCard(BaseModel):
     requirement: str
     proof: str
     artifacts: List[str]
@@ -234,7 +234,7 @@ class OverviewPayload(BaseModel):
     power_bi_views: List[PowerBIView]
     support_channels: List[SupportChannel]
     feedback_themes: List[FeedbackTheme]
-    role_fit: List[RoleFitCard]
+    capability_fit: List[CapabilityFitCard]
     sample_requests: List[str]
     use_cases: List[UseCase]
     guides: List[Guide]

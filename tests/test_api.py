@@ -26,7 +26,7 @@ def test_overview_returns_core_sections() -> None:
     assert len(body["power_bi_views"]) >= 2
     assert len(body["support_channels"]) >= 3
     assert len(body["feedback_themes"]) >= 3
-    assert len(body["role_fit"]) >= 4
+    assert len(body["capability_fit"]) >= 4
     assert len(body["sample_requests"]) >= 3
     assert len(body["use_cases"]) >= 4
     assert len(body["guides"]) >= 5

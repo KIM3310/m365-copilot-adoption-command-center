@@ -551,8 +551,8 @@ async function handleApi(request: Request, url: URL): Promise<Response | null> {
   if (pathname === '/api/facilitation' && method === 'GET') {
     return jsonResponse({ items: overview.facilitation_items, objections: overview.objection_log });
   }
-  if ((pathname === '/api/capability-fit' || pathname === '/api/role-fit') && method === 'GET') {
-    return jsonResponse({ items: overview.role_fit });
+  if (pathname === '/api/capability-fit' && method === 'GET') {
+    return jsonResponse({ items: overview.capability_fit });
   }
   if (pathname === '/api/walkthrough/brief' && method === 'GET') {
     return jsonResponse({
@@ -606,7 +606,7 @@ async function handleApi(request: Request, url: URL): Promise<Response | null> {
       ...overview.guides
         .filter((item) => matchesQuery([item.title, item.summary, item.excerpt, item.tags.join(' ')], q))
         .map((item) => ({ type: 'guide', id: item.id, title: item.title, summary: item.summary, path: item.path })),
-      ...overview.role_fit
+      ...overview.capability_fit
         .filter((item) => matchesQuery([item.requirement, item.proof, item.artifacts.join(' ')], q))
         .map((item, index) => ({ type: 'capability-fit', id: `capability-fit-${index + 1}`, title: item.requirement, summary: item.proof, path: 'docs/capability_fit.md' })),
       ...overview.facilitation_items

@@ -31,7 +31,7 @@ const overviewPayload = {
   feedback_themes: [
     { theme: 'Managers need stronger quality coaching examples', source: 'Survey', volume: 'High', owner: 'Training Lead', next_action: 'publish examples' },
   ],
-  role_fit: [
+  capability_fit: [
     {
       requirement: 'AI assistant readiness assessments and action plans',
       proof: 'direct proof',

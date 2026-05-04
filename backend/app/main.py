@@ -19,7 +19,7 @@ from .data import (
     POWER_BI_VIEWS,
     PROGRAM_SIGNALS,
     READINESS_DIMENSIONS,
-    ROLE_FIT_CARDS,
+    CAPABILITY_FIT_CARDS,
     SAMPLE_REQUESTS,
     SUPPORT_CHANNELS,
     TRAINING_SESSIONS,
@@ -168,10 +168,9 @@ def get_facilitation() -> dict:
     }
 
 
-@app.get("/api/role-fit", include_in_schema=False)
 @app.get("/api/capability-fit")
-def get_role_fit() -> dict:
-    return {"items": [card.model_dump() for card in ROLE_FIT_CARDS]}
+def get_capability_fit() -> dict:
+    return {"items": [card.model_dump() for card in CAPABILITY_FIT_CARDS]}
 
 
 @app.get("/api/walkthrough/brief")
@@ -234,7 +233,7 @@ def search(q: str = Query(..., min_length=2)) -> SearchResponse:
                     path=guide.path,
                 )
             )
-    for index, card in enumerate(ROLE_FIT_CARDS, start=1):
+    for index, card in enumerate(CAPABILITY_FIT_CARDS, start=1):
         if _matches_query([card.requirement, card.proof, " ".join(card.artifacts)], q):
             results.append(
                 SearchResult(
@@ -270,7 +269,7 @@ def get_overview() -> dict:
         power_bi_views=POWER_BI_VIEWS,
         support_channels=SUPPORT_CHANNELS,
         feedback_themes=FEEDBACK_THEMES,
-        role_fit=ROLE_FIT_CARDS,
+        capability_fit=CAPABILITY_FIT_CARDS,
         sample_requests=SAMPLE_REQUESTS,
         use_cases=USE_CASES,
         guides=GUIDES,
