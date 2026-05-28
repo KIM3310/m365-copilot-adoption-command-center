@@ -233,6 +233,10 @@ What is real:
 - the facilitation mechanics,
 - the quality of the system walkthrough.
 
+## Commercialization Playbook
+
+- [Monetization and GTM playbook](docs/monetization-playbook.md) frames this archived proof as a current buyer conversation, including offer ladder, channels, proof gates, and risk boundaries.
+
 ## Cloud + AI Architecture
 
 This repository includes a neutral cloud and AI engineering blueprint that maps the current proof surface to runtime boundaries, data contracts, model-risk controls, deployment posture, and validation hooks.
