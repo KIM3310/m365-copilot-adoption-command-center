@@ -1,4 +1,4 @@
-# AI assistant Readiness Assessment Playbook
+# AI Assistant Readiness Assessment Playbook
 
 ## Purpose
 
@@ -25,7 +25,7 @@ This project uses a practical ADKAR view:
 
 ## Readiness scorecard
 
-| Area | Green means | Yellow means | Red means |
+| Area | Ready | Needs attention | Blocked |
 | --- | --- | --- | --- |
 | Sponsor alignment | One business problem, one success metric, one decision cadence | Sponsor is supportive but vague on value case | Sponsor wants rollout without a real business problem |
 | Manager readiness | Managers can coach on acceptable use and review boundaries | Managers attended awareness training only | Managers treat AI assistant as optional noise |
