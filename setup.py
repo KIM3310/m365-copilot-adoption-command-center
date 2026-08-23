@@ -14,7 +14,7 @@ setup(
     extras_require={
         "dev": [
             "httpx>=0.27,<1.0",
-            "pytest>=8.0,<9.0",
+            "pytest>=8.0,<10.0",
         ]
     },
 )
