@@ -49,7 +49,7 @@ def test_guide_detail_returns_markdown_body() -> None:
     assert response.status_code == 200
     body = response.json()
     assert body["guide"]["id"] == "guide-001"
-    assert "AI assistant Readiness Assessment Playbook" in body["body"]
+    assert "AI Assistant Readiness Assessment Playbook" in body["body"]
 
 
 def test_search_returns_cross_surface_matches() -> None:
